@@ -66,9 +66,9 @@ Este projeto utiliza alguns componentes, softwares e designs adicionais de terce
 O software é rápido e fácil de usar. Basta seguir estes passos simples:
 
 1. **Insira** texto e fórmulas na caixa "**Code**" à esquerda.
-2. Pressione **F5** ou clique em <img alt="Play" height="24" src="https://raw.githubusercontent.com/Proektsoftbg/Calcpad/main/Help/Images/Play.png"> para calcular. Os resultados aparecerão na caixa "**Output**" à direita como um **relatório** Html formatado profissionalmente.
-3. Clique em <img alt="PrintPreview" height="24" src="https://raw.githubusercontent.com/Proektsoftbg/Calcpad/main/Help/Images/PrintPreview.png"> para **imprimir** ou em <img alt="Copy" height="24" src="https://raw.githubusercontent.com/Proektsoftbg/Calcpad/main/Help/Images/Copy.png"> para **copiar** a saída.
-   Você também pode **exportar** para um documento **Html** <img alt="Html" height="24" src="https://raw.githubusercontent.com/Proektsoftbg/Calcpad/main/Help/Images/Save.png">, **PDF** <img alt="PDF" height="24" src="https://raw.githubusercontent.com/Proektsoftbg/Calcpad/main/Help/Images/Pdf.png"> ou **MS Word** <img alt="Word" height="24" src="https://raw.githubusercontent.com/Proektsoftbg/Calcpad/main/Help/Images/Word.png">.
+2. Pressione **F5** ou clique em <img alt="Play" height="24" src="https://raw.githubusercontent.com/hildebrandopsj/calcpad/main/Help/Images/Play.png"> para calcular. Os resultados aparecerão na caixa "**Output**" à direita como um **relatório** Html formatado profissionalmente.
+3. Clique em <img alt="PrintPreview" height="24" src="https://raw.githubusercontent.com/hildebrandopsj/calcpad/main/Help/Images/PrintPreview.png"> para **imprimir** ou em <img alt="Copy" height="24" src="https://raw.githubusercontent.com/hildebrandopsj/calcpad/main/Help/Images/Copy.png"> para **copiar** a saída.
+   Você também pode **exportar** para um documento **Html** <img alt="Html" height="24" src="https://raw.githubusercontent.com/hildebrandopsj/calcpad/main/Help/Images/Save.png">, **PDF** <img alt="PDF" height="24" src="https://raw.githubusercontent.com/hildebrandopsj/calcpad/main/Help/Images/Pdf.png"> ou **MS Word** <img alt="Word" height="24" src="https://raw.githubusercontent.com/hildebrandopsj/calcpad/main/Help/Images/Word.png">.
 
 ## A linguagem
 
