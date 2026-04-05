@@ -79,56 +79,56 @@ O Calcpad utiliza uma linguagem de programação simples que inclui os seguintes
   * Vetores: [v₁; v₂; v₃; …; vₙ];  
   * Matrizes: [M₁₁; M₁₂; … ; M₁ₙ | M₂₁; M₂₂; … ; M₂ₙ | … | Mₘ₁; Mₘ₂; … ; Mₘₙ]  
   * Variáveis:  
-     - todas as letras Unicode;
-     - dígitos: 0 - 9;
-     - vírgula: " , ";
-     - símbolos especiais: ′ , ″ , ‴ , ⁗ , ‾ , ø , Ø , ° , ∡ ;
-     - sobrescritos: ⁰ , ¹ , ² , ³ , ⁴ , ⁵ , ⁶ , ⁷ , ⁸ , ⁹ , ⁿ , ⁺ , ⁻ ;
-     - subscritos: ₀ , ₁ , ₂ , ₃ , ₄ , ₅ , ₆ , ₇ , ₈ , ₉ , ₊ , ₋ , ₌ , ₍ , ₎;
-     - " \_ " para subscrito;
-    Qualquer nome de variável deve começar com uma letra. Os nomes diferenciam maiúsculas de minúsculas (case sensitive).
-  * Operadores:
-     "**\!**" - fatorial;
-     "**^**" - expoente;
-     "**/**" - divisão;
-     "**÷**" - força barra de divisão no modo inline e barra (//) no modo pro;
-     "**\\**" - divisão inteira;
-     "**⦼**" - módulo (resto);
-     "**\***" - multiplicação;
-     "**-**" - menos;
-     "**+**" - mais;
-     "**≡**" - igual a;
-     "**≠**" - diferente de;
-     "**\<**" - menor que;
-     "**\>**" - maior que;
-     "**≤**" - menor ou igual;
-     "**≥**" - maior ou igual;
-     "**∧**" - "E" lógico;
-     "**∨**" - "OU" lógico;
-     "**⊕**" - "XOR" lógico;
-     "**∠**" - fasor A∠φ (\<\<);
-     "**=**" - atribuição ou definição de variável, função ou macro;
-     "**←**" - atribuição para um nível externo ou variável global em bloco (\<\*);
-  * Funções personalizadas do tipo f (x; y; z; ... );
-  * Funções integradas:
-     Trigonométricas:
-      **sin**(x)  - seno;
-      **cos**(x)  - cosseno;
-      **tan**(x)  - tangente;
-      **csc**(x)  - cossecante;
-      **sec**(x)  - secante;
-      **cot**(x)  - cotangente;
-     Hiperbólicas:
-      **sinh**(x) - seno hiperbólico;
-      **cosh**(x) - cosseno hiperbólico;
-      **tanh**(x) - tangente hiperbólica;
-      **csch**(x) - cossecante hiperbólica;
-      **sech**(x) - secante hiperbólica;
-      **coth**(x) - cotangente hiperbólica;
-     Trigonométricas Inversas:
-      **asin**(x) - arco seno;
-      **acos**(x) - arco cosseno;
-      **atan**(x) - arco tangente;
+     - todas as letras Unicode;  
+     - dígitos: 0 - 9;  
+     - vírgula: " , ";  
+     - símbolos especiais: ′ , ″ , ‴ , ⁗ , ‾ , ø , Ø , ° , ∡ ;  
+     - sobrescritos: ⁰ , ¹ , ² , ³ , ⁴ , ⁵ , ⁶ , ⁷ , ⁸ , ⁹ , ⁿ , ⁺ , ⁻ ;  
+     - subscritos: ₀ , ₁ , ₂ , ₃ , ₄ , ₅ , ₆ , ₇ , ₈ , ₉ , ₊ , ₋ , ₌ , ₍ , ₎;  
+     - " \_ " para subscrito;  
+    Qualquer nome de variável deve começar com uma letra. Os nomes diferenciam maiúsculas de minúsculas (case sensitive).  
+  * Operadores:  
+     "**\!**" - fatorial;  
+     "**^**" - expoente;  
+     "**/**" - divisão;  
+     "**÷**" - força barra de divisão no modo inline e barra (//) no modo pro;  
+     "**\\**" - divisão inteira;  
+     "**⦼**" - módulo (resto);  
+     "**\***" - multiplicação;  
+     "**-**" - menos;  
+     "**+**" - mais;  
+     "**≡**" - igual a;  
+     "**≠**" - diferente de;  
+     "**\<**" - menor que;  
+     "**\>**" - maior que;  
+     "**≤**" - menor ou igual;  
+     "**≥**" - maior ou igual;  
+     "**∧**" - "E" lógico;  
+     "**∨**" - "OU" lógico;  
+     "**⊕**" - "XOR" lógico;  
+     "**∠**" - fasor A∠φ (\<\<);  
+     "**=**" - atribuição ou definição de variável, função ou macro;  
+     "**←**" - atribuição para um nível externo ou variável global em bloco (\<\*);  
+  * Funções personalizadas do tipo f (x; y; z; ... );  
+  * Funções integradas:  
+     Trigonométricas:  
+      **sin**(x)  - seno;  
+      **cos**(x)  - cosseno;  
+      **tan**(x)  - tangente;  
+      **csc**(x)  - cossecante;  
+      **sec**(x)  - secante;  
+      **cot**(x)  - cotangente;  
+     Hiperbólicas:  
+      **sinh**(x) - seno hiperbólico;  
+      **cosh**(x) - cosseno hiperbólico;  
+      **tanh**(x) - tangente hiperbólica;  
+      **csch**(x) - cossecante hiperbólica;  
+      **sech**(x) - secante hiperbólica;  
+      **coth**(x) - cotangente hiperbólica;  
+     Trigonométricas Inversas:  
+      **asin**(x) - arco seno;  
+      **acos**(x) - arco cosseno;  
+      **atan**(x) - arco tangente;  
       **atan2**(x; y) - o ângulo cuja tangente é o quociente entre y e x;
       **acsc**(x) - arco cossecante;
       **asec**(x) - arco secante;
@@ -436,110 +436,110 @@ O Calcpad utiliza uma linguagem de programação simples que inclui os seguintes
        *conteúdo linha 1*
        *conteúdo linha 2*
        ...
-      \#end def
-     Macro de texto inline:
-      \#def *nome\_da\_macro$*(*param1$*; *param2$*;...) = *conteúdo*
-    &emsp;Macro de texto multilinha:
-    &emsp;&emsp;#def *nome_da_macro$*(*param1$*; *param2$*;...)
-       *conteúdo linha 1*
-       *conteúdo linha 2*
-       ...
-      \#end def
-  * Importação/Exportação de dados externos:
-     Arquivos de Texto/CSV:
-      \#read M from arquivo.txt@R1C1:R2C2 TYPE=R SEP=',' - lê matriz M de arquivo texto/CSV;
-      \#write M to arquivo.txt@R1C1:R2C2 TYPE=N SEP=',' - escreve matriz M em arquivo texto/CSV;
-      \#append M to arquivo.txt@R1C1:R2C2 TYPE=N SEP=',' - anexa matriz M em arquivo texto/CSV;
-     Arquivos Excel (xlsx e xlsm):
-      \#read M from arquivo.xlsx@Planilha1\!A1:B2 TYPE=R - lê matriz M de arquivo Excel;
-      \#write M to arquivo.xlsx@Planilha1\!A1:B2 TYPE=N - escreve matriz M em arquivo Excel;
-      \#append M to arquivo.xlsx@Planilha1\!A1:B2 TYPE=N - anexa matriz M em arquivo Excel (mesmo que write);
-     Planilha, intervalo, TYPE e SEP podem ser omitidos.
-     Para o comando \#read, TYPE pode ser [R|D|C|S|U|L|V].
-     Para comandos \#write e \#append, TYPE pode ser Y ou N.
-  * Proteção de escrita: \#const - declara uma variável ou função constante (somente leitura);
-  * Controle de saída:
-     \#hide - oculta o conteúdo do relatório;
-     \#show - sempre mostra o conteúdo (padrão);
-     \#pre  - mostra o conteúdo seguinte apenas antes dos cálculos;
-     \#post - mostra o conteúdo seguinte apenas após os cálculos;
-     \#val  - mostra apenas o resultado final, sem a equação;
-     \#equ  - mostra equações completas e resultados (padrão);
-     \#noc  - mostra apenas equações sem resultados (sem cálculos);
-     \#nosub  - não substitui variáveis (sem substituição);
-     \#novar  - mostra equações apenas com valores substituídos (sem variáveis);
-     \#varsub - mostra equações com variáveis e valores substituídos (padrão);
-     \#split - divide equações que não cabem em uma única linha;
-     \#wrap - quebra equações que não cabem em uma única linha (padrão);
-     \#round n - arredonda a saída para n dígitos após o ponto decimal;
-     \#round default - restaura o arredondamento para as configurações padrão;
-     \#format FFFF - especifica uma string de formato personalizada;
-     \#format default - restaura a formatação padrão;
-     \#md on - habilita markdown nos comentários;
-     \#md off - desabilita markdown nos comentários;
-     \#phasor - define formato de saída de complexos para polar fasorial: A∠φ;
-     \#complex - define formato de saída de complexos para algébrico cartesiano: a + bi.
-     Cada um dos comandos acima é efetivo após a linha atual até o fim do relatório ou outro comando que o sobrescreva.
-  * Pontos de interrupção (breakpoints) para execução passo a passo:
-     \#pause - calcula até a linha atual e aguarda retomada manual;
-     \#input - renderiza um formulário de entrada até a linha atual e aguarda entrada do usuário.
-  * Seletores de unidades trigonométricas: \#deg - graus, \#rad - radianos, \#gra - grados;
-  * Separador para unidades de destino: |, por exemplo: `3ft + 12in|cm` mostrará 121,92 cm;
-  * Adimensionais: %, ‰, ‱, pcm, ppm, ppb, ppt, ppq;
-  * Unidades de ângulo: °, ′, ″, deg, rad, grad, rev;
-  * Unidades métricas (SI e compatíveis):
-     Massa: g, hg, kg, t, kt, Mt, Gt, dg, cg, mg, μg, Da, u;
-     Comprimento: m, km, dm, cm, mm, μm, nm, pm, AU, ly;
-     Tempo: s, ms, μs, ns, ps, min, h, d, w, y;
-     Frequência: Hz, kHz, MHz, GHz, THz, mHz, μHz, nHz, pHz, rpm;
-     Velocidade: kmh;
-     Corrente elétrica: A, kA, MA, GA, TA, mA, μA, nA, pA;
-     Temperatura: °C, Δ°C, K;
-     Quantidade de substância: mol;
-     Intensidade luminosa: cd;
-     Área: a, daa, ha;
-     Volume: L, daL, hL, dL, cL, mL, μL, nL, pL;
-     Força: dyn N, daN, hN, kN, MN, GN, TN, gf, kgf, tf;
-     Momento: Nm, kNm;
-     Pressão: Pa, daPa, hPa, kPa, MPa, GPa, TPa, dPa, cPa, mPa, μPa, nPa, pPa,
-        bar, mbar, μbar, atm, at, Torr, mmHg;
-     Viscosidade: P, cP, St, cSt;
-     Energia/trabalho: J, kJ, MJ, GJ, TJ, mJ, μJ, nJ, pJ,
-        Wh, kWh, MWh, GWh, TWh, mWh, μWh, nWh, pWh
-        eV, keV, MeV, GeV, TeV, PeV, EeV, cal, kcal, erg;
-     Potência: W, kW, MW, GW, TW, mW, μW, nW, pW, hpM, ks;
-        VA, kVA, MVA, GVA, TVA, mVA, μVA, nVA, pVA,
-        VAR, kVAR, MVAR, GVAR, TVAR, mVAR, μVAR, nVAR, pVAR, hpM, ks;
-     Carga elétrica: C, kC, MC, GC, TC, mC, μC, nC, pC, Ah, mAh;
-     Potencial: V, kV, MV, GV, TV, mV, μV, nV, pV;
-     Capacitância: F, kF, MF, GF, TF, mF, μF, nF, pF;
-     Resistência: Ω, kΩ, MΩ, GΩ, TΩ, mΩ, μΩ, nΩ, pΩ;
-     Condutância: S, kS, MS, GS, TS, mS, μS, nS, pS, ℧, k℧, M℧, G℧, T℧, m℧, μ℧, n℧, p℧;
-     Fluxo magnético: Wb , kWb, MWb, GWb, TWb, mWb, μWb, nWb, pWb;
-     Densidade de fluxo magnético: T, kT, MT, GT, TT, mT, μT, nT, pT;
-     Indutância: H, kH, MH, GH, TH, mH, μH, nH, pH;
-     Fluxo luminoso: lm;
-     Iluminância: lx;
-     Radioatividade: Bq, kBq, MBq, GBq, TBq, mBq, μBq, nBq, pBq, Ci, Rd;
-     Dose absorvida: Gy, kGy, MGy, GGy, TGy, mGy, μGy, nGy, pGy;
-     Dose equivalente: Sv, kSv, MSv, GSv, TSv, mSv, μSv, nSv, pSv;
-     Atividade catalítica: kat;
-  * Unidades não métricas (Imperial/US):
-     Massa: gr, dr, oz, lb (ou lbm, lb\_m), klb, kipm (ou kip\_m), st, qr,
-        cwt (ou cwt\_UK, cwt\_US), ton (ou ton\_UK, ton\_US), slug;
-     Comprimento: th, in, ft, yd, ch, fur, mi, ftm (ou ftm\_UK, ftm\_US),
-         cable (ou cable\_UK, cable\_US), nmi, li, rod, pole, perch, lea;
-     Velocidade: mph, knot;
-     Temperatura: °F, Δ°F, °R;
-     Área: rood, ac;
-     Volume, fluido: fl\_oz, gi, pt, qt, gal, bbl, ou:
-       fl\_oz\_UK, gi\_UK, pt\_UK, qt\_UK, gal\_UK, bbl\_UK,
-       fl\_oz\_US, gi\_US, pt\_US, qt\_US, gal\_US, bbl\_US,
-     Volume, seco: (US) pt\_dry, (US) qt\_dry, (US) gal\_dry, (US) bbl\_dry,
-       pk (ou pk\_UK, pk\_US), bu (or bu\_UK, bu\_US);
-     Força: ozf (ou oz\_f), lbf (ou lb\_f), kip (ou kipf, kip\_f), tonf (ou ton\_f), pdl;
-     Pressão: osi, osf psi, psf, ksi, ksf, tsi, tsf, inHg;
-     Energia/trabalho: BTU, therm, (ou therm\_UK, therm\_US), quad;
-     Potência: hp, hpE, hpS;
-  * Unidades personalizadas - .Nome = expressão.
-    Nomes podem incluir símbolos de moedas: €, £, ₤, ¥, ¢, ₽, ₹, ₩, ₪.
+      \#end def  
+     Macro de texto inline:  
+      \#def *nome\_da\_macro$*(*param1$*; *param2$*;...) = *conteúdo*  
+    &emsp;Macro de texto multilinha:  
+    &emsp;&emsp;#def *nome_da_macro$*(*param1$*; *param2$*;...)  
+       *conteúdo linha 1*  
+       *conteúdo linha 2*  
+       ...  
+      \#end def  
+  * Importação/Exportação de dados externos:  
+     Arquivos de Texto/CSV:  
+      \#read M from arquivo.txt@R1C1:R2C2 TYPE=R SEP=',' - lê matriz M de arquivo texto/CSV;  
+      \#write M to arquivo.txt@R1C1:R2C2 TYPE=N SEP=',' - escreve matriz M em arquivo texto/CSV;  
+      \#append M to arquivo.txt@R1C1:R2C2 TYPE=N SEP=',' - anexa matriz M em arquivo texto/CSV;  
+     Arquivos Excel (xlsx e xlsm):  
+      \#read M from arquivo.xlsx@Planilha1\!A1:B2 TYPE=R - lê matriz M de arquivo Excel;  
+      \#write M to arquivo.xlsx@Planilha1\!A1:B2 TYPE=N - escreve matriz M em arquivo Excel;  
+      \#append M to arquivo.xlsx@Planilha1\!A1:B2 TYPE=N - anexa matriz M em arquivo Excel (mesmo que write);  
+     Planilha, intervalo, TYPE e SEP podem ser omitidos.  
+     Para o comando \#read, TYPE pode ser [R|D|C|S|U|L|V].  
+     Para comandos \#write e \#append, TYPE pode ser Y ou N.  
+  * Proteção de escrita: \#const - declara uma variável ou função constante (somente leitura);  
+  * Controle de saída:  
+     \#hide - oculta o conteúdo do relatório;  
+     \#show - sempre mostra o conteúdo (padrão);  
+     \#pre  - mostra o conteúdo seguinte apenas antes dos cálculos;  
+     \#post - mostra o conteúdo seguinte apenas após os cálculos;  
+     \#val  - mostra apenas o resultado final, sem a equação;  
+     \#equ  - mostra equações completas e resultados (padrão);  
+     \#noc  - mostra apenas equações sem resultados (sem cálculos);  
+     \#nosub  - não substitui variáveis (sem substituição);  
+     \#novar  - mostra equações apenas com valores substituídos (sem variáveis);  
+     \#varsub - mostra equações com variáveis e valores substituídos (padrão);  
+     \#split - divide equações que não cabem em uma única linha;  
+     \#wrap - quebra equações que não cabem em uma única linha (padrão);  
+     \#round n - arredonda a saída para n dígitos após o ponto decimal;  
+     \#round default - restaura o arredondamento para as configurações padrão;  
+     \#format FFFF - especifica uma string de formato personalizada;  
+     \#format default - restaura a formatação padrão;  
+     \#md on - habilita markdown nos comentários;  
+     \#md off - desabilita markdown nos comentários;  
+     \#phasor - define formato de saída de complexos para polar fasorial: A∠φ;  
+     \#complex - define formato de saída de complexos para algébrico cartesiano: a + bi.  
+     Cada um dos comandos acima é efetivo após a linha atual até o fim do relatório ou outro comando que o sobrescreva.  
+  * Pontos de interrupção (breakpoints) para execução passo a passo:  
+     \#pause - calcula até a linha atual e aguarda retomada manual;  
+     \#input - renderiza um formulário de entrada até a linha atual e aguarda entrada do usuário.  
+  * Seletores de unidades trigonométricas: \#deg - graus, \#rad - radianos, \#gra - grados;  
+  * Separador para unidades de destino: |, por exemplo: `3ft + 12in|cm` mostrará 121,92 cm;  
+  * Adimensionais: %, ‰, ‱, pcm, ppm, ppb, ppt, ppq;  
+  * Unidades de ângulo: °, ′, ″, deg, rad, grad, rev;  
+  * Unidades métricas (SI e compatíveis):  
+     Massa: g, hg, kg, t, kt, Mt, Gt, dg, cg, mg, μg, Da, u;  
+     Comprimento: m, km, dm, cm, mm, μm, nm, pm, AU, ly;  
+     Tempo: s, ms, μs, ns, ps, min, h, d, w, y;  
+     Frequência: Hz, kHz, MHz, GHz, THz, mHz, μHz, nHz, pHz, rpm;  
+     Velocidade: kmh;  
+     Corrente elétrica: A, kA, MA, GA, TA, mA, μA, nA, pA;  
+     Temperatura: °C, Δ°C, K;  
+     Quantidade de substância: mol;  
+     Intensidade luminosa: cd;  
+     Área: a, daa, ha;  
+     Volume: L, daL, hL, dL, cL, mL, μL, nL, pL;  
+     Força: dyn N, daN, hN, kN, MN, GN, TN, gf, kgf, tf;  
+     Momento: Nm, kNm;  
+     Pressão: Pa, daPa, hPa, kPa, MPa, GPa, TPa, dPa, cPa, mPa, μPa, nPa, pPa,  
+        bar, mbar, μbar, atm, at, Torr, mmHg;  
+     Viscosidade: P, cP, St, cSt;  
+     Energia/trabalho: J, kJ, MJ, GJ, TJ, mJ, μJ, nJ, pJ,  
+        Wh, kWh, MWh, GWh, TWh, mWh, μWh, nWh, pWh  
+        eV, keV, MeV, GeV, TeV, PeV, EeV, cal, kcal, erg;  
+     Potência: W, kW, MW, GW, TW, mW, μW, nW, pW, hpM, ks;  
+        VA, kVA, MVA, GVA, TVA, mVA, μVA, nVA, pVA,  
+        VAR, kVAR, MVAR, GVAR, TVAR, mVAR, μVAR, nVAR, pVAR, hpM, ks;  
+     Carga elétrica: C, kC, MC, GC, TC, mC, μC, nC, pC, Ah, mAh;  
+     Potencial: V, kV, MV, GV, TV, mV, μV, nV, pV;  
+     Capacitância: F, kF, MF, GF, TF, mF, μF, nF, pF;  
+     Resistência: Ω, kΩ, MΩ, GΩ, TΩ, mΩ, μΩ, nΩ, pΩ;  
+     Condutância: S, kS, MS, GS, TS, mS, μS, nS, pS, ℧, k℧, M℧, G℧, T℧, m℧, μ℧, n℧, p℧;  
+     Fluxo magnético: Wb , kWb, MWb, GWb, TWb, mWb, μWb, nWb, pWb;  
+     Densidade de fluxo magnético: T, kT, MT, GT, TT, mT, μT, nT, pT;  
+     Indutância: H, kH, MH, GH, TH, mH, μH, nH, pH;  
+     Fluxo luminoso: lm;  
+     Iluminância: lx;  
+     Radioatividade: Bq, kBq, MBq, GBq, TBq, mBq, μBq, nBq, pBq, Ci, Rd;  
+     Dose absorvida: Gy, kGy, MGy, GGy, TGy, mGy, μGy, nGy, pGy;  
+     Dose equivalente: Sv, kSv, MSv, GSv, TSv, mSv, μSv, nSv, pSv;  
+     Atividade catalítica: kat;  
+  * Unidades não métricas (Imperial/US):  
+     Massa: gr, dr, oz, lb (ou lbm, lb\_m), klb, kipm (ou kip\_m), st, qr,  
+        cwt (ou cwt\_UK, cwt\_US), ton (ou ton\_UK, ton\_US), slug;  
+     Comprimento: th, in, ft, yd, ch, fur, mi, ftm (ou ftm\_UK, ftm\_US),  
+         cable (ou cable\_UK, cable\_US), nmi, li, rod, pole, perch, lea;  
+     Velocidade: mph, knot;  
+     Temperatura: °F, Δ°F, °R;  
+     Área: rood, ac;  
+     Volume, fluido: fl\_oz, gi, pt, qt, gal, bbl, ou:  
+       fl\_oz\_UK, gi\_UK, pt\_UK, qt\_UK, gal\_UK, bbl\_UK,  
+       fl\_oz\_US, gi\_US, pt\_US, qt\_US, gal\_US, bbl\_US,  
+     Volume, seco: (US) pt\_dry, (US) qt\_dry, (US) gal\_dry, (US) bbl\_dry,  
+       pk (ou pk\_UK, pk\_US), bu (or bu\_UK, bu\_US);  
+     Força: ozf (ou oz\_f), lbf (ou lb\_f), kip (ou kipf, kip\_f), tonf (ou ton\_f), pdl;  
+     Pressão: osi, osf psi, psf, ksi, ksf, tsi, tsf, inHg;  
+     Energia/trabalho: BTU, therm, (ou therm\_UK, therm\_US), quad;  
+     Potência: hp, hpE, hpS;  
+  * Unidades personalizadas - .Nome = expressão.  
+    Nomes podem incluir símbolos de moedas: €, £, ₤, ¥, ¢, ₽, ₹, ₩, ₪.  
