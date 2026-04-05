@@ -191,7 +191,7 @@ O Calcpad utiliza uma linguagem de programação simples que inclui os seguintes
       **hp**(x) - converte x para seu tipo equivalente de alto desempenho (hp);  
       **ishp**(x) - verifica se o tipo de x é um vetor ou matriz de alto desempenho (hp);  
      Vetor:  
-      \<ins\>Criação:\</ins\>  
+      Criação:  
       **vector**(n) - cria um vetor vazio com comprimento n;  
       **vector\_hp**(n) - cria um vetor vazio de alto desempenho (hp) com comprimento n;  
       **range**(x1; xn; s) - cria um vetor com valores de x1 a xn com passo s;  
