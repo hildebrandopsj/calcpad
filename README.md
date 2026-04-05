@@ -74,11 +74,11 @@ O software é rápido e fácil de usar. Basta seguir estes passos simples:
 
 O Calcpad utiliza uma linguagem de programação simples que inclui os seguintes elementos:
 
-  * Números reais: dígitos 0 - 9 e ponto decimal ".";
-  * Números complexos: re ± imi (ex: 3 - 2i);
-  * Vetores: [v₁; v₂; v₃; …; vₙ];
-  * Matrizes: [M₁₁; M₁₂; … ; M₁ₙ | M₂₁; M₂₂; … ; M₂ₙ | … | Mₘ₁; Mₘ₂; … ; Mₘₙ]
-  * Variáveis:
+  * Números reais: dígitos 0 - 9 e ponto decimal ".";  
+  * Números complexos: re ± imi (ex: 3 - 2i);  
+  * Vetores: [v₁; v₂; v₃; …; vₙ];  
+  * Matrizes: [M₁₁; M₁₂; … ; M₁ₙ | M₂₁; M₂₂; … ; M₂ₙ | … | Mₘ₁; Mₘ₂; … ; Mₘₙ]  
+  * Variáveis:  
      - todas as letras Unicode;
      - dígitos: 0 - 9;
      - vírgula: " , ";
