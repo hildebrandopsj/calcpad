@@ -1,540 +1,545 @@
-# Calcpad Readme  
+# Calcpad
 
-  
-Calcpad is free software for mathematical and engineering calculations. It represents a flexible and modern programmable calculator with Html report generator. It is simple and easy to use, but it also includes many advanced features:  
-  
-* real and complex numbers (rectangular and polar-phasor formats);
-* units of measurement (SI, Imperial and USCS);
-* vectors and matrices: rectangular, symmetric, column, diagonal, upper/lower triangular;
-* custom variables and units;
-* built-in library with common math functions;
-* vectors and matrix functions:
-  * data functions: search, lookup, sort, count, etc.;
-  * aggregate functions: min, max, sum, sumsq, srss, average, product (geometric) mean, etc.;
-  * math functions: norm, condition, determinant, rank, trace, transpose, adjugate and cofactor, inverse, factorization (cholesky, ldlt, lu, qr and svd), eigenvalues/vectors and linear systems of equations;
-* custom functions of multiple parameters f(x; y; z; …);
-* powerful numerical methods for root and extremum finding, numerical integration and differentiation;
-* finite sum, product and iteration procedures, Fourier series and FFT;
-* modules, macros and string variables;
-* reading and writing data from/to text, CSV and Excel files;
-* program flow control with conditions and loops;
-* "titles" and 'text' comments in quotes;
-* support for Html and CSS in comments for rich formatting;
-* function plotting, images, tables, parametric SVG drawings, etc.;
-* automatic generation of Html forms for data input;
-* professional looking Html reports for viewing and printing;
-* export to Word (\*.docx) and PDF documents;
-* variable substitution and smart rounding of numbers;
-* output visibility control and content folding;
-* support for plain text (\*.txt, \*.cpd) and binary (\*.cpdz) file formats.
-  
-This software is developed using the C# programming language and the latest computer technologies. It automatically parses the input, substitutes the variables, calculates the expressions and displays the output. All results are sent to a professional looking Html report for viewing and printing.
-  
-![Sample](https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Sample.png?raw=true)  
-  
-## Fields of application  
-This software is suitable for engineers and other professionals that need to perform repetitive calculations and present them in official documentation such as calculation notes. They can automate this task efficiently by creating powerful and reliable Calcpad worksheets. It can also help teachers to prepare calculation examples, papers, manuals, books etc. Students can use it to solve various problems, prepare homeworks, theses etc.  
-  
-## Installation  
-The installation is performed by the automated setup program [calcpad-VM-setup-en-x64.exe](https://github.com/Proektsoftbg/CalcpadVM/blob/main/Setup/calcpad-VM-setup-en-x64.exe). Follow the instruction of the setup wizard. The software requires a 64 bit computer with Windows 10/11 and [Microsoft .NET Desktop Runtime 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0). 
-  
-## Licensing and terms of use  
-This software is free for both commercial and non-commercial use. It is distributed under the MIT license:  
-  
-Copyright © 2025 PROEKTSOFT EOOD®  
-  
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  
-  
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  
-  
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
-  
-Any scripts, developed with Calcpad are property of the respective authors. They can be used without additional limitations except those appointed by the authors themselves.  
+O Calcpad é um software gratuito para cálculos matemáticos e de engenharia. Ele representa uma calculadora programável flexível e moderna com um gerador de relatórios em Html. É simples e fácil de usar, mas também inclui muitos recursos avançados:
 
-### Acknowledgments  
-This project uses some additional third party components, software and design. They are re-distributed free of charge, under the license conditions, provided by the respective authors.  
-1. The new and beautiful icons are created using [icons8.com](https://icons8.com/).  
-2. The pdf export was made possible thanks to the [wkhtmltopdf.org](https://wkhtmltopdf.org/) project.  
-3. Some symbols are displayed, using the Jost* font family by [indestructible type*](https://indestructibletype.com/), under the [SIL open font license](https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web).
-Square brackets are slightly modified to suit the application needs.  
-  
-## How it works  
-The software is quick and easy to use. Just follow these simple steps:  
-  
-1. **Enter** text and formulas into the "**Code**" box on the left.  
-2. Press **F5** or click <img alt="Play" height="24" src="https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Play.png"> to calculate. Results will appear in the "**Output**" box on the right as a professionally formatted Html **report**.  
-3. Click <img alt="PrintPreview" height="24" src="https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/PrintPreview.png"> to **print** or <img alt="Copy" height="24" src="https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Copy.png"> to **copy** the output.  
-You can also **export** it to **Html** <img alt="Html" height="24" src="https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Save.png">, **PDF** <img alt="PDF" height="24" src="https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Pdf.png"> or **MS Word** <img alt="Word" height="24" src="https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Word.png"> document.  
-  
-## The language  
-  
-Calcpad uses a simple programming language that includes the following elements:  
-* Real numbers: digits 0 - 9 and decimal point ".";  
-* Complex numbers: re ± imi (e.g. 3 - 2i);  
-* Vectors: [v₁; v₂; v₃; …; vₙ];  
-* Matrices: [M₁₁; M₁₂; … ; M₁ₙ | M₂₁; M₂₂; … ; M₂ₙ | … | Mₘ₁; Mₘ₂; … ; Mₘₙ]  
-* Variables:  
-&emsp;- all Unicode letters;  
-&emsp;- digits: 0 - 9;  
-&emsp;- comma: " , ";  
-&emsp;- special symbols: ′ , ″ , ‴ , ⁗ , ‾ , ø , Ø , ° , ∡ ;  
-&emsp;- superscripts: ⁰ , ¹ , ² , ³ , ⁴ , ⁵ , ⁶ , ⁷ , ⁸ , ⁹ , ⁿ , ⁺ , ⁻ ;  
-&emsp;- subscripts: ₀ , ₁ , ₂ , ₃ , ₄ , ₅ , ₆ , ₇ , ₈ , ₉ , ₊ , ₋ , ₌ , ₍ , ₎;  
-&emsp;- " _ " for subscript;  
-Any variable name must start with a letter. Names are case sensitive.  
-* Operators:  
-&emsp;"**!**" - factorial;  
-&emsp;"**^**" - exponent;  
-&emsp;"**/**" - division;  
-&emsp;"**÷**" - force division bar in inline mode and slash in pro mode (//);  
-&emsp;"**\\**" - integer division;  
-&emsp;"**⦼**" - modulo (remainder);  
-&emsp;"**\***" - multiplication;  
-&emsp;"**-**" - minus;  
-&emsp;"**+**" - plus;  
-&emsp;"**≡**" - equal to;  
-&emsp;"**≠**" - not equal to;  
-&emsp;"**<**" - less than;  
-&emsp;"**>**" - greater than;  
-&emsp;"**≤**" - less or equal;  
-&emsp;"**≥**" - greater or equal;  
-&emsp;"**∧**" - logical "AND";   
-&emsp;"**∨**" - logical "OR";   
-&emsp;"**⊕**" - logical "XOR";   
-&emsp;"**∠**" - phasor A∠φ (<<);   
-&emsp;"**=**" - assignment or definition of a variable, function or macro;  
-&emsp;"**←**" - assignment to an outer level or global variable in block (<\*);   
-* Custom functions of type f (x; y; z; ... );  
-* Built-in functions:  
-&emsp;Trigonometric:  
-&emsp;&emsp;**sin**(x)  - sine;  
-&emsp;&emsp;**cos**(x)  - cosine;  
-&emsp;&emsp;**tan**(x)  - tangent;  
-&emsp;&emsp;**csc**(x)  - cosecant;  
-&emsp;&emsp;**sec**(x)  - secant;  
-&emsp;&emsp;**cot**(x)  - cotangent;  
-&emsp;Hyperbolic:  
-&emsp;&emsp;**sinh**(x) - hyperbolic sine;  
-&emsp;&emsp;**cosh**(x) - hyperbolic cosine;  
-&emsp;&emsp;**tanh**(x) - hyperbolic tangent;  
-&emsp;&emsp;**csch**(x) - hyperbolic cosecant;  
-&emsp;&emsp;**sech**(x) - hyperbolic secant;  
-&emsp;&emsp;**coth**(x) - hyperbolic cotangent;  
-&emsp;Inverse trigonometric:  
-&emsp;&emsp;**asin**(x) - inverse sine;  
-&emsp;&emsp;**acos**(x) - inverse cosine;  
-&emsp;&emsp;**atan**(x) - inverse tangent;  
-&emsp;&emsp;**atan2**(x; y) - the angle whose tangent is the quotient of y and x;  
-&emsp;&emsp;**acsc**(x) - inverse cosecant;  
-&emsp;&emsp;**asec**(x) - inverse secant;  
-&emsp;&emsp;**acot**(x) - inverse cotangent;  
-&emsp;Inverse hyperbolic:  
-&emsp;&emsp;**asinh**(x) - inverse hyperbolic sine;  
-&emsp;&emsp;**acosh**(x) - inverse hyperbolic cosine;  
-&emsp;&emsp;**atanh**(x) - inverse hyperbolic tangent;  
-&emsp;&emsp;**acsch**(x) - inverse hyperbolic cosecant;  
-&emsp;&emsp;**asech**(x) - inverse hyperbolic secant;  
-&emsp;&emsp;**acoth**(x) - inverse hyperbolic cotangent;  
-&emsp;Logarithmic, exponential and roots:  
-&emsp;&emsp;**log**(x)   - decimal logarithm;  
-&emsp;&emsp;**ln**(x)    - natural logarithm;  
-&emsp;&emsp;**log_2**(x) - binary logarithm;  
-&emsp;&emsp;**exp**(x)   - natural exponent;  
-&emsp;&emsp;**sqr**(x) or **sqrt**(x) - square root;  
-&emsp;&emsp;**cbrt**(x) - cubic root;  
-&emsp;&emsp;**root**(x; n) - n-th root;  
-&emsp;Rounding:  
-&emsp;&emsp;**round**(x) - round to the nearest integer;  
-&emsp;&emsp;**floor**(x) - round to the smaller integer (towards -∞);  
-&emsp;&emsp;**ceiling**(x) - round to the greater integer (towards +∞);  
-&emsp;&emsp;**trunc**(x) - round to the smaller integer (towards zero);  
-&emsp;Integer:  
-&emsp;&emsp;**mod**(x; y) - the remainder of an integer division;  
-&emsp;&emsp;**gcd**(x; y; z...) - the greatest common divisor of several integers;  
-&emsp;&emsp;**lcm**(x; y; z...) - the least common multiple of several integers;  
-&emsp;Complex:  
-&emsp;&emsp;**re**(z)    - the real part of a complex number;  
-&emsp;&emsp;**im**(z)    - the imaginary part of a complex number;  
-&emsp;&emsp;**abs**(z)   - absolute value/magnitude;  
-&emsp;&emsp;**phase**(z) - the phase of a complex number;  
-&emsp;&emsp;**conj**(z)  - the conjugate of a complex number;  
-&emsp;Aggregate and interpolation:  
-&emsp;&emsp;**min**(x; y; z...) - minimum of multiple values;  
-&emsp;&emsp;**max**(x; y; z...) - maximum of multiple values;  
-&emsp;&emsp;**sum**(x; y; z...) - sum of multiple values = x + y + z...;  
-&emsp;&emsp;**sumsq**(x; y; z...) - sum of squares = x² + y² + z²...;  
-&emsp;&emsp;**srss**(x; y; z...) - square root of sum of squares = sqrt(x² + y² + z²...);  
-&emsp;&emsp;**average**(x; y; z...) - average of multiple values = (x + y + z...)/n;  
-&emsp;&emsp;**product**(x; y; z...) - product of multiple values = x·y·z...;  
-&emsp;&emsp;**mean**(x; y; z...) - geometric mean = n-th root(x·y·z...);  
-&emsp;&emsp;**take**(n; a; b; c...) - returns the n-th element from the list;  
-&emsp;&emsp;**line**(x; a; b; c...) - linear interpolation;  
-&emsp;&emsp;**spline**(x; a; b; c...) - Hermite spline interpolation;  
-&emsp;Conditional and logical:  
-&emsp;&emsp;**if**(*cond*; *value-if-true*; *value-if-false*) - conditional evaluation;  
-&emsp;&emsp;**switch**(*cond1*; *value1*; *cond2*; *value2*; … ; *default*) - selective evaluation;  
-&emsp;&emsp;**not**(x) - logical "NOT";  
-&emsp;&emsp;**and**(x; y; z...) - logical "AND";  
-&emsp;&emsp;**or**(x; y; z...) - logical "OR";  
-&emsp;&emsp;**xor**(x; y; z...) - logical "XOR";  
-&emsp;Other:  
-&emsp;&emsp;**sign**(x) - the sign of a number;  
-&emsp;&emsp;**random**(x) - random number between 0 and x;  
-&emsp;&emsp;**getunits**(x) - gets the units of x without the value. Returns 1 if x is unitless;  
-&emsp;&emsp;**setunits**(x; u) - sets the units u to x where x can be scalar, vector or matrix;  
-&emsp;&emsp;**clrunits**(x) - clears the units from a scalar, vector or matrix x;  
-&emsp;&emsp;**hp**(x) - converts x to its high performance (hp) equivalent type;  
-&emsp;&emsp;**ishp**(x) - checks if the type of x is a high-performance (hp) vector or matrix;  
-&emsp;Vector:  
-&emsp;&emsp;<ins>Creational:</ins>  
-&emsp;&emsp;**vector**(n) - creates an empty vector with length n;  
-&emsp;&emsp;**vector_hp**(n) - creates an empty high performance (hp) vector with length n;  
-&emsp;&emsp;**range**(x1; xn; s) - creates a vector with values spanning from x1 to xn with step s;  
-&emsp;&emsp;**range_hp**(x1; xn; s) - creates a high performance (hp) from a range of values as above;  
-&emsp;&emsp;<ins>Structural:</ins>  
-&emsp;&emsp;**len**(v) - returns the length of vector v;  
-&emsp;&emsp;**size**(v) - the actual size of vector v - the index of the last non-zero element;  
-&emsp;&emsp;**resize**(v; n) - sets a new length n of vector v;  
-&emsp;&emsp;**fill**(v; x) - fills vector v with value x;  
-&emsp;&emsp;**join**(A; b; c…) - creates a vector by joining the arguments: matrices, vectors and scalars;  
-&emsp;&emsp;**slice**(v; i₁; i₂) - returns the part of vector v bounded by indexes i₁ and i₂ inclusive;  
-&emsp;&emsp;**first**(v; n) - the first n elements of vector v;  
-&emsp;&emsp;**last**(v; n) - the last n elements of vector v;  
-&emsp;&emsp;**extract**(v; i) - extracts the elements from v which indexes are contained in i;  
-&emsp;&emsp;<ins>Data:</ins>  
-&emsp;&emsp;**sort**(v) - sorts the elements of vector v in ascending order;  
-&emsp;&emsp;**rsort**(v) - sorts the elements of vector v in descending order;  
-&emsp;&emsp;**order**(v) - the indexes of vector v, arranged by the ascending order of its elements;  
-&emsp;&emsp;**revorder**(v) - the indexes of vector v, arranged by the descending order of its elements;  
-&emsp;&emsp;**reverse**(v) - a new vector containing the elements of v in reverse order;  
-&emsp;&emsp;**count**(v; x; i) - the number of elements in v, after the i-th one, that are equal to x;  
-&emsp;&emsp;**search**(v; x; i)- the index of the first element in v, after the i-th one, that is equal to x;  
-&emsp;&emsp;**find**(v; x; i) or  
-&emsp;&emsp;**find_eq**(v; x; i) - the indexes of all elements in v, after the i-th one, that are = x;  
-&emsp;&emsp;**find_ne**(v; x; i) - the indexes of all elements in v, after the i-th one, that are ≠ x;  
-&emsp;&emsp;**find_lt**(v; x; i) - the indexes of all elements in v, after the i-th one, that are < x;  
-&emsp;&emsp;**find_le**(v; x; i) - the indexes of all elements in v, after the i-th one, that are ≤ x;  
-&emsp;&emsp;**find_gt**(v; x; i) - the indexes of all elements in v, after the i-th one, that are > x;  
-&emsp;&emsp;**find_ge**(v; x; i) - the indexes of all elements in v, after the i-th one, that are ≥ x;  
-&emsp;&emsp;**lookup**(a; b; x) or  
-&emsp;&emsp;**lookup_eq**(a; b; x) - all elements in a for which the respective elements in b are = x;  
-&emsp;&emsp;**lookup_ne**(a; b; x) - all elements in a for which the respective elements in b are ≠ x;  
-&emsp;&emsp;**lookup_lt**(a; b; x) - all elements in a for which the respective elements in b are < x;  
-&emsp;&emsp;**lookup_le**(a; b; x) - all elements in a for which the respective elements in b are ≤ x;  
-&emsp;&emsp;**lookup_gt**(a; b; x) - all elements in a for which the respective elements in b are > x;  
-&emsp;&emsp;**lookup_ge**(a; b; x) - all elements in a for which the respective elements in b are ≥ x;  
-&emsp;&emsp;<ins>Math:</ins>  
-&emsp;&emsp;**norm_1**(v) - L1 (Manhattan) norm of vector v;  
-&emsp;&emsp;**norm**(v) or  
-&emsp;&emsp;**norm_2**(v) or  
-&emsp;&emsp;**norm_e**(v) - L2 (Euclidean) norm of vector v;  
-&emsp;&emsp;**norm_p**(v; p) - Lp norm of vector v;  
-&emsp;&emsp;**norm_i**(v) - L∞ (infinity) norm of vector v;  
-&emsp;&emsp;**unit**(v) - the normalized vector v (with L2 norm = 1);  
-&emsp;&emsp;**dot**(a; b) - scalar product of two vectors a and b;  
-&emsp;&emsp;**cross**(a; b) - cross product of two vectors a and b (with length 2 or 3);  
-&emsp;Matrix:  
-&emsp;&emsp;<ins>Creational:</ins>  
-&emsp;&emsp;**matrix**(m; n) - creates an empty matrix with dimensions m⨯n;  
-&emsp;&emsp;**identity**(n) - creates an identity matrix with dimensions n⨯n;  
-&emsp;&emsp;**diagonal**(n; d) - creates a n⨯n diagonal matrix and fills the diagonal with value d;  
-&emsp;&emsp;**column**(m; c) - creates a column matrix with dimensions m⨯1, filled with value c;  
-&emsp;&emsp;**utriang**(n) - creates an upper triangular matrix with dimensions n⨯n;  
-&emsp;&emsp;**ltriang**(n) - creates a lower triangular matrix with dimensions n⨯n;  
-&emsp;&emsp;**symmetric**(n) - creates a symmetric matrix with dimensions n⨯n;  
-&emsp;&emsp;**matrix_hp**(m; n) - creates a high-performance matrix with dimensions m⨯n;  
-&emsp;&emsp;**identity_hp**(n) - creates a high-performance identity matrix with dimensions n⨯n;  
-&emsp;&emsp;**diagonal_hp**(n; d) - creates a high-performance n⨯n diagonal matrix filled with value d;  
-&emsp;&emsp;**column_hp**(m; c) - creates a high-performance m⨯1 column matrix filled with value c;  
-&emsp;&emsp;**utriang_hp**(n) - creates a high-performance n⨯n upper triangular matrix;  
-&emsp;&emsp;**ltriang_hp**(n) - creates a high-performance n⨯n lower triangular matrix;  
-&emsp;&emsp;**symmetric_hp**(n) - creates a high-performance symmetric matrix with dimensions n⨯n;  
-&emsp;&emsp;**vec2diag**(v) - creates a diagonal matrix from the elements of vector v;  
-&emsp;&emsp;**vec2row**(v) - creates a row matrix from the elements of vector v;   
-&emsp;&emsp;**vec2col**(v) - creates a column matrix from the elements of vector v;  
-&emsp;&emsp;**join_cols**(c₁; c₂; c₃…) - creates a new matrix by joining column vectors;  
-&emsp;&emsp;**join_rows**(r₁; r₂; r₃…) - creates a new matrix by joining row vectors;  
-&emsp;&emsp;**augment**(A; B; C…) - creates a new matrix by appending matrices A; B; C side by side;  
-&emsp;&emsp;**stack**(A; B; C…) - creates a new matrix by stacking matrices A; B; C one below the other;  
-&emsp;&emsp;<ins>Structural:</ins>  
-&emsp;&emsp;**n_rows**(M) - number of rows in matrix M;  
-&emsp;&emsp;**n_cols**(M) - number of columns in matrix M;  
-&emsp;&emsp;**mresize**(M; m; n) - sets new dimensions m and n for matrix M;  
-&emsp;&emsp;**mfill**(M; x) - fills matrix M with value x;  
-&emsp;&emsp;**fill_row**(M; i; x) - fills the i-th row of matrix M with value x;  
-&emsp;&emsp;**fill_col**(M; j; x) - fills the j-th column of matrix M with value x;  
-&emsp;&emsp;**copy**(A; B; i; j) - copies all elements from A to B, starting from indexes i and j of B;  
-&emsp;&emsp;**add**(A; B; i; j) - adds all elements from A to those of B, starting from indexes i and j of B;  
-&emsp;&emsp;**row**(M; i) - extracts the i-th row of matrix M as a vector;  
-&emsp;&emsp;**col**(M; j) - extracts the j-th column of matrix M as a vector;  
-&emsp;&emsp;**extract_rows**(M; i) - extracts the rows from matrix M whose indexes are contained in vector i;  
-&emsp;&emsp;**extract_cols**(M; j) - extracts the columns from matrix M whose indexes are contained in vector j;  
-&emsp;&emsp;**diag2vec**(M) - extracts the diagonal elements of matrix M to a vector;  
-&emsp;&emsp;**submatrix**(M; i₁; i₂; j₁; j₂) - extracts a submatrix of M, bounded by rows i₁ and i₂ and columns j₁ and j₂, incl.;  
-&emsp;&emsp;<ins>Data:</ins>  
-&emsp;&emsp;**sort_cols**(M; i) - sorts the columns of M based on the values in row i in ascending order;  
-&emsp;&emsp;**rsort_cols**(M; i) - sorts the columns of M based on the values in row i in descending order;  
-&emsp;&emsp;**sort_rows**(M; j) - sorts the rows of M based on the values in column j in ascending order;  
-&emsp;&emsp;**rsort_rows**(M; j) - sorts the rows of M based on the values in column j in descending order;  
-&emsp;&emsp;**order_cols**(M; i) - the indexes of the columns of M based on the ordering of the values from row i in ascending order;  
-&emsp;&emsp;**revorder_cols**(M; i) - the indexes of the columns of M based on the ordering of the values from row i in descending order;  
-&emsp;&emsp;**order_rows**(M; j) - the indexes of the rows of M based on the ordering of the values in column j in ascending order;  
-&emsp;&emsp;**revorder_rows**(M; j) - the indexes of the rows of M based on the ordering of the values in column j in descending order;  
-&emsp;&emsp;**mcount**(M; x) - number of occurrences of value x in matrix M;  
-&emsp;&emsp;**msearch**(M; x; i; j) - vector with the two indexes of the first occurrence of x in matrix M, starting from indexes i and j;  
-&emsp;&emsp;**mfind**(M; x) or  
-&emsp;&emsp;**mfind_eq**(M; x) - the indexes of all elements in M that are = x;  
-&emsp;&emsp;**mfind_ne**(M; x) - the indexes of all elements in M that are ≠ x;  
-&emsp;&emsp;**mfind_lt**(M; x) - the indexes of all elements in M that are < x;  
-&emsp;&emsp;**mfind_le**(M; x) - the indexes of all elements in M that are ≤ x;  
-&emsp;&emsp;**mfind_gt**(M; x) - the indexes of all elements in M that are > x;  
-&emsp;&emsp;**mfind_ge**(M; x) - the indexes of all elements in M that are ≥ x;  
-&emsp;&emsp;**hlookup**(M; x; i₁; i₂) or  
-&emsp;&emsp;**hlookup_eq**(M; x; i₁; i₂) - the values from row i₂ of M, for which the elements in row i₁ are = x;  
-&emsp;&emsp;**hlookup_ne**(M; x; i₁; i₂) - the values from row i₂ of M, for which the elements in row i₁ are ≠ x;  
-&emsp;&emsp;**hlookup_lt**(M; x; i₁; i₂) - the values from row i₂ of M, for which the elements in row i₁ are < x;  
-&emsp;&emsp;**hlookup_le**(M; x; i₁; i₂) - the values from row i₂ of M, for which the elements in row i₁ are ≤ x;  
-&emsp;&emsp;**hlookup_gt**(M; x; i₁; i₂) - the values from row i₂ of M, for which the elements in row i₁ are > x;  
-&emsp;&emsp;**hlookup_ge**(M; x; i₁; i₂) - the values from row i₂ of M, for which the elements in row i₁ are ≥ x;  
-&emsp;&emsp;**vlookup**(M; x; j₁; j₂) or  
-&emsp;&emsp;**vlookup_eq**(M; x; j₁; j₂) - the values from column j₂ of M, for which the elements in column j₁ are = x;  
-&emsp;&emsp;**vlookup_ne**(M; x; j₁; j₂) - the values from column j₂ of M, for which the elements in column j₁ are ≠ x;  
-&emsp;&emsp;**vlookup_lt**(M; x; j₁; j₂) - the values from column j₂ of M, for which the elements in column j₁ are < x;  
-&emsp;&emsp;**vlookup_le**(M; x; j₁; j₂) - the values from column j₂ of M, for which the elements in column j₁ are ≤ x;  
-&emsp;&emsp;**vlookup_gt**(M; x; j₁; j₂) - the values from column j₂ of M, for which the elements in column j₁ are > x;  
-&emsp;&emsp;**vlookup_ge**(M; x; j₁; j₂) - the values from column j₂ of M, for which the elements in column j₁ are ≥ x;  
-&emsp;&emsp;<ins>Math:</ins>  
-&emsp;&emsp;**hprod**(A; B) - Hadamard product of matrices A and B;  
-&emsp;&emsp;**fprod**(A; B) - Frobenius product of matrices A and B;  
-&emsp;&emsp;**kprod**(A; B) - Kronecker product of matrices A and B;  
-&emsp;&emsp;**mnorm_1**(M) - L1 norm of matrix M;  
-&emsp;&emsp;**mnorm**(M) or  
-&emsp;&emsp;**mnorm_2**(M) - L2 norm of matrix M;  
-&emsp;&emsp;**mnorm_e**(M) - Frobenius norm of matrix M;  
-&emsp;&emsp;**mnorm_i**(M) - L∞ norm of matrix M;  
-&emsp;&emsp;**cond_1**(M) - condition number of M based on the L1 norm;  
-&emsp;&emsp;**cond**(M) or  
-&emsp;&emsp;**cond_2**(M) - condition number of M based on the L2 norm;  
-&emsp;&emsp;**cond_e**(M) - condition number of M based on the Frobenius norm;  
-&emsp;&emsp;**cond_i**(M) - condition number of M based on the L∞ norm;  
-&emsp;&emsp;**det**(M) - determinant of matrix M;  
-&emsp;&emsp;**rank**(M) - rank of matrix M;  
-&emsp;&emsp;**trace**(M) - trace of matrix M;  
-&emsp;&emsp;**transp**(M) - transpose of matrix M;  
-&emsp;&emsp;**adj**(M) - adjugate of matrix M;  
-&emsp;&emsp;**cofactor**(M) - cofactor matrix of M;  
-&emsp;&emsp;**eigenvals**(M; n_e) - the first n_e (or all if omitted) eigenvalues of matrix M as a vector;  
-&emsp;&emsp;**eigenvecs**(M; n_e) - the first n_e (or all if omitted) eigenvectors of matrix M as a row-major matrix;  
-&emsp;&emsp;**eigen**(M; n_e) - the first n_e (or all if omitted) eigenvalues and eigenvectors of M as a row-major matrix;  
-&emsp;&emsp;**cholesky**(M) - Cholesky decomposition of a symmetric, positive-definite matrix M;  
-&emsp;&emsp;**lu**(M) - LU decomposition of matrix M;  
-&emsp;&emsp;**qr**(M) - QR decomposition of matrix M;  
-&emsp;&emsp;**svd**(M) - singular value decomposition of M;  
-&emsp;&emsp;**inverse**(M) - inverse of matrix M;  
-&emsp;&emsp;**lsolve**(A; b) - solves the system of linear equations Ax = b using LDLT decomposition for symmetric matrices, and LU for non-symmetric;  
-&emsp;&emsp;**clsolve**(A; b) - solves the linear matrix equation Ax = b with symmetric, positive-definite matrix A using Cholesky decomposition;  
-&emsp;&emsp;**slsolve**(A; b) - solves the linear matrix equation Ax = b with high-performance symmetric, positive-definite matrix A using preconditioned conjugate gradient (PCG) method;  
-&emsp;&emsp;**msolve**(A; B) - solves the generalized matrix equation AX = B using LDLT decomposition for symmetric matrices, and LU for non-symmetric;  
-&emsp;&emsp;**cmsolve**(A; B) - solves the generalized matrix equation AX = B with symmetric, positive-definite matrix A using Cholesky decomposition;  
-&emsp;&emsp;**smsolve**(A; B) - solves the generalized matrix equation AX = B with high-performance symmetric, positive-definite matrix A using PCG method;  
-&emsp;&emsp;**matmul**(A; B) - fast multiplication of square hp matrices using parallel Winograd algorithm. The multiplication operator A*B uses it automatically for all square hp matrices of size 10 and larger;
-&emsp;&emsp;**fft**(M) - performs fast Fourier transform of row-major matrix M. It must have one row for real data and two rows for complex;  
-&emsp;&emsp;**ift**(M) - performs inverse Fourier transform of row-major matrix M. It must have one row for real data and two rows for complex;  
-&emsp;&emsp;**<ins>Double interpolation:</ins>**  
-&emsp;&emsp;**take**(x; y; M) - returns the element of matrix M at indexes x and y;  
-&emsp;&emsp;**line**(x; y; M) - double linear interpolation from the elements of matrix M based on the values of x and y;  
-&emsp;&emsp;**spline**(x; y; M) - double Hermite spline interpolation from the elements of matrix M based on the values of x and y.  
-&emsp;&emsp;*Tol* - target tolerance for the iterative PCG solver.  
-* Comments: "Title" or 'text' in double or single quotes, respectively. HTML, CSS, JS and SVG are allowed.  
-* Graphing and plotting:  
-&emsp;$Plot { f(x) @ x = a : b } - simple plot;  
-&emsp;$Plot { x(t) | y(t) @ t = a : b } - parametric;  
-&emsp;$Plot { f1(x) & f2(x) & ... @ x = a : b } - multiple;  
-&emsp;$Plot { x1(t) | y1(t) & x2(t) | y2(t) & ... @ x = a : b } - multiple parametric;  
-&emsp;$Map { f(x; y) @ x = a : b & y = c : d }  - 2D color map of a 3D surface;  
-&emsp;PlotHeight - height of plot area in pixels;  
-&emsp;PlotWidth - width of plot area in pixels;  
-&emsp;PlotSVG - draw plots in vector (SVG) format;  
-&emsp;PlotAdaptive - use adaptive mesh (= 1) for function plotting or uniform (= 0);  
-&emsp;PlotStep - the size of the mesh for map plotting;  
-&emsp;PlotPalette - the number of color palette to be used for surface plots (0-9);  
-&emsp;PlotShadows - draw surface plots with shadows;  
-&emsp;PlotSmooth - smooth transition of colors (= 1) or isobands (= 0) for surface plots;  
-&emsp;PlotLightDir - direction to light source (0-7) clockwise.  
-* Iterative and numerical methods:  
-&emsp;$Root { f(x) = const @ x = a : b } - root finding for f(x) = const;  
-&emsp;$Root { f(x) @ x = a : b } - root finding for f(x) = 0;  
-&emsp;$Find { f(x) @ x = a : b } - similar to above, but x is not required to be a precise solution;  
-&emsp;$Sup { f(x) @ x = a : b } - local maximum of a function;  
-&emsp;$Inf { f(x) @ x = a : b } - local minimum of a function;  
-&emsp;$Area { f(x) @ x = a : b } - adaptive Gauss-Lobatto numerical integration;  
-&emsp;$Integral { f(x) @ x = a : b } - Tanh-Sinh numerical integration;  
-&emsp;$Slope { f(x) @ x = a } - numerical differentiation by Richardson extrapolation;  
-&emsp;$Derivative { f(x) @ x = a } - numerical differentiation by complex step method;  
-&emsp;$Sum { f(k) @ k = a : b } - iterative sum;  
-&emsp;$Product { f(k) @ k = a : b } - iterative product;  
-&emsp;$Repeat { f(k) @ k = a : b } - iterative expression block with counter;  
-&emsp;$While { condition; expressions } - iterative expression block with condition;  
-&emsp;$Block { expressions } - multiline expression block;  
-&emsp;$Inline { expressions } - inline expression block;  
-&emsp;Precision - relative precision for numerical methods \[10<sup>-2</sup>; 10<sup>-16</sup>\] (default is 10<sup>-12</sup>)   
-* Program flow control:  
-&emsp;Simple:  
-&emsp;&emsp;#if *condition*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#end if  
-&emsp;Alternative:  
-&emsp;&emsp;#if *condition*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#else  
-&emsp;&emsp;&emsp;*Some other code*  
-&emsp;&emsp;#end if  
-&emsp;Complete:  
-&emsp;&emsp;#if *condition1*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#else if *condition2*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#else  
-&emsp;&emsp;&emsp;*Some other code*  
-&emsp;&emsp;#end if  
-You can add or omit as many "#else if's" as needed. Only one "#else" is allowed. You can omit this too.  
-* Iteration blocks:  
-&emsp;Simple:  
-&emsp;&emsp;#repeat *number of repetitions*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#loop  
-&emsp;With conditional break/continue:  
-&emsp;&emsp;#repeat *number of repetitions*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;&emsp;#if *condition*  
-&emsp;&emsp;&emsp;&emsp;#break or #continue  
-&emsp;&emsp;&emsp;#end if  
-&emsp;&emsp;&emsp;*Some more code*  
-&emsp;&emsp;#loop  
-&emsp;With counter:  
-&emsp;&emsp;#for counter = start : end  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#loop  
-&emsp;With condition:  
-&emsp;&emsp;#while *condition*  
-&emsp;&emsp;&emsp;*Your code goes here*  
-&emsp;&emsp;#loop  
-* Modules and macros/string variables:  
-&emsp;Modules:  
-&emsp;&emsp;#include *filename* - include external file (module);  
-&emsp;&emsp;#local - start local section (not to be included);  
-&emsp;&emsp;#global - start global section (to be included);  
-&emsp;Inline string variable:  
-&emsp;&emsp;#def *variable_name$* = *content*  
-&emsp;Multiline string variable:  
-&emsp;&emsp;#def *variable_name$*  
-&emsp;&emsp;&emsp;*content line 1*  
-&emsp;&emsp;&emsp;*content line 2*  
-&emsp;&emsp;&emsp;...  
-&emsp;&emsp;#end def  
-&emsp;Inline string macro:  
-&emsp;&emsp;#def *macro_name$*(*param1$*; *param2$*;...) = *content*  
-&emsp;Multiline string macro:  
-&emsp;&emsp;#def *macro_name$*(*param1$*; *param2$*;...)  
-&emsp;&emsp;&emsp;*content line 1*  
-&emsp;&emsp;&emsp;*content line 2*  
-&emsp;&emsp;&emsp;...  
-&emsp;&emsp;#end def  
-* Import/Export of external data:  
-&emsp;Text/CSV files:  
-&emsp;&emsp;#read M from filename.txt@R1C1:R2C2 TYPE=R SEP=',' - read matrix M from a text/CSV file;  
-&emsp;&emsp;#write M to filename.txt@R1C1:R2C2 TYPE=N SEP=',' - write matrix M to a text/CSV file;  
-&emsp;&emsp;#append M to filename.txt@R1C1:R2C2 TYPE=N SEP=',' - append matrix M to a text/CSV file;  
-&emsp;Excel files (xlsx and xlsm):  
-&emsp;&emsp;#read M from filename.xlsx@Sheet1!A1:B2 TYPE=R - read matrix M from an Excel file;  
-&emsp;&emsp;#write M to filename.xlsx@Sheet1!A1:B2 TYPE=N - write matrix M to an Excel file;  
-&emsp;&emsp;#append M to filename.xlsx@Sheet1!A1:B2 TYPE=N - append matrix M to an Excel file (same as write);  
-&emsp;Sheet, range, TYPE and SEP can be omitted.  
-&emsp;For #read command, TYPE can be either of [R|D|C|S|U|L|V].  
-&emsp;For #write and #append commands, TYPE can be Y or N.  
-* Write protection: #const - declares a constant (readonly) variable or function;  
-* Output control:  
-&emsp;#hide - hide the report contents;  
-&emsp;#show - always show the contents (default);  
-&emsp;#pre  - show the next contents only before calculations;  
-&emsp;#post - show the next contents only after calculations;  
-&emsp;#val  - show only the final result, without the equation;  
-&emsp;#equ  - show complete equations and results (default);  
-&emsp;#noc  - show only equations without results (no calculations);  
-&emsp;#nosub  - do not substitute variables (no substitution);  
-&emsp;#novar  - show equations only with substituted values (no variables);  
-&emsp;#varsub - show equations with variables and substituted values (default);  
-&emsp;#split - split equations that do not fit on a single line;  
-&emsp;#wrap - wrap equations that do not fit on a single line (default);  
-&emsp;#round n - rounds the output to n digits after the decimal point;  
-&emsp;#round default - restores rounding to the default settings;  
-&emsp;#format FFFF - specifies custom format string;  
-&emsp;#format default - restores the default formatting;  
-&emsp;#md on - enables markdown in comments;  
-&emsp;#md off - disables markdown in comments;  
-&emsp;#phasor - sets output format of complex numbers to polar phasor: A∠φ;  
-&emsp;#complex - sets output format of complex numbers to Cartesian algebraic: a + bi.  
-&emsp;Each of the above commands is effective after the current line until the end of the report or another command that overwrites it.  
-* Breakpoints for step-by-step execution:  
-&emsp;#pause - calculates to the current line and waits until resumed manually;  
-&emsp;#input - renders an input form to the current line and waits for user input.  
-* Switches for trigonometric units: #deg - degrees, #rad - radians, #gra - gradians;  
-* Separator for target units: |, for example:  `3ft + 12in|cm` will show 121.92 cm;  
-* Dimensionless: %, ‰, ‱, pcm, ppm, ppb, ppt, ppq;  
-* Angle units: °, ′, ″, deg, rad, grad, rev;  
-* Metric units (SI and compatible):  
-&emsp;Mass: g, hg, kg, t, kt, Mt, Gt, dg, cg, mg, μg, Da, u;  
-&emsp;Length: m, km, dm, cm, mm, μm, nm, pm, AU, ly;  
-&emsp;Time: s, ms, μs, ns, ps, min, h, d, w, y;  
-&emsp;Frequency: Hz, kHz, MHz, GHz, THz, mHz, μHz, nHz, pHz, rpm;  
-&emsp;Speed: kmh;  
-&emsp;Electric current: A, kA, MA, GA, TA, mA, μA, nA, pA;  
-&emsp;Temperature: °C, Δ°C, K;  
-&emsp;Amount of substance: mol;  
-&emsp;Luminous intensity: cd;  
-&emsp;Area: a, daa, ha;  
-&emsp;Volume: L, daL, hL, dL, cL, mL, μL, nL, pL;  
-&emsp;Force: dyn N, daN, hN, kN, MN, GN, TN, gf, kgf, tf;  
-&emsp;Moment: Nm, kNm;  
-&emsp;Pressure: Pa, daPa, hPa, kPa, MPa, GPa, TPa, dPa, cPa, mPa, μPa, nPa, pPa,  
-&emsp;&emsp;&emsp; bar, mbar, μbar, atm, at, Torr, mmHg;  
-&emsp;Viscosity: P, cP, St, cSt;  
-&emsp;Energy work: J, kJ, MJ, GJ, TJ, mJ, μJ, nJ, pJ,  
-&emsp;&emsp;&emsp;&emsp;Wh, kWh, MWh, GWh, TWh, mWh, μWh, nWh, pWh  
-&emsp;&emsp;&emsp;&emsp;eV, keV, MeV, GeV, TeV, PeV, EeV, cal, kcal, erg;  
-&emsp;Power: W, kW, MW, GW, TW, mW, μW, nW, pW, hpM, ks;  
-&emsp;&emsp;&emsp; VA, kVA, MVA, GVA, TVA, mVA, μVA, nVA, pVA,  
-&emsp;&emsp;&emsp; VAR, kVAR, MVAR, GVAR, TVAR, mVAR, μVAR, nVAR, pVAR, hpM, ks;  
-&emsp;Electric charge: C, kC, MC, GC, TC, mC, μC, nC, pC, Ah, mAh;  
-&emsp;Potential: V, kV, MV, GV, TV, mV, μV, nV, pV;  
-&emsp;Capacitance: F, kF, MF, GF, TF, mF, μF, nF, pF;  
-&emsp;Resistance: Ω, kΩ, MΩ, GΩ, TΩ, mΩ, μΩ, nΩ, pΩ;  
-&emsp;Conductance: S, kS, MS, GS, TS, mS, μS, nS, pS, ℧, k℧, M℧, G℧, T℧, m℧, μ℧, n℧, p℧;  
-&emsp;Magnetic flux: Wb , kWb, MWb, GWb, TWb, mWb, μWb, nWb, pWb;  
-&emsp;Magnetic flux density: T, kT, MT, GT, TT, mT, μT, nT, pT;  
-&emsp;Inductance: H, kH, MH, GH, TH, mH, μH, nH, pH;  
-&emsp;Luminous flux: lm;  
-&emsp;Illuminance: lx;  
-&emsp;Radioactivity: Bq, kBq, MBq, GBq, TBq, mBq, μBq, nBq, pBq, Ci, Rd;  
-&emsp;Absorbed dose: Gy, kGy, MGy, GGy, TGy, mGy, μGy, nGy, pGy;  
-&emsp;Equivalent dose: Sv, kSv, MSv, GSv, TSv, mSv, μSv, nSv, pSv;  
-&emsp;Catalytic activity: kat;  
-* Non-metric units (Imperial/US):  
-&emsp;Mass: gr, dr, oz, lb (or lbm, lb_m), klb, kipm (or kip_m), st, qr,  
-&emsp;&emsp;&ensp; cwt (or cwt_UK, cwt_US), ton (or ton_UK, ton_US), slug;  
-&emsp;Length: th, in, ft, yd, ch, fur, mi, ftm (or ftm_UK, ftm_US),  
-&emsp;&emsp;&emsp;&ensp; cable (or cable_UK, cable_US), nmi, li, rod, pole, perch, lea;  
-&emsp;Speed: mph, knot;  
-&emsp;Temperature: °F, Δ°F, °R;  
-&emsp;Area: rood, ac;  
-&emsp;Volume, fluid: fl_oz, gi, pt, qt, gal, bbl, or:  
-&emsp;&emsp;&emsp;fl_oz_UK, gi_UK, pt_UK, qt_UK, gal_UK, bbl_UK,  
-&emsp;&emsp;&emsp;fl_oz_US, gi_US, pt_US, qt_US, gal_US, bbl_US,  
-&emsp;Volume, dry: (US) pt_dry, (US) qt_dry, (US) gal_dry, (US) bbl_dry,  
-&emsp;&emsp;&emsp;pk (or pk_UK, pk_US), bu (or bu_UK, bu_US);  
-&emsp;Force: ozf (or oz_f), lbf (or lb_f), kip (or kipf, kip_f), tonf (or ton_f), pdl;  
-&emsp;Pressure: osi, osf psi, psf, ksi, ksf, tsi, tsf, inHg;  
-&emsp;Energy/work: BTU, therm, (or therm_UK, therm_US), quad;  
-&emsp;Power: hp, hpE, hpS;  
-* Custom units - .Name = expression.  
-Names can include currency symbols: €, £, ₤, ¥, ¢, ₽, ₹, ₩, ₪.
+  * números reais e complexos (formatos retangular e polar-fasor);
+  * unidades de medida (SI, Imperial e USCS);
+  * vetores e matrizes: retangulares, simétricas, coluna, diagonais, triangulares superiores/inferiores;
+  * variáveis e unidades personalizadas;
+  * biblioteca integrada com funções matemáticas comuns;
+  * funções de vetores e matrizes:
+      * funções de dados: busca, consulta, ordenação, contagem, etc.;
+      * funções de agregação: mín, máx, soma, soma dos quadrados (sumsq), srss, média, média (geométrica) do produto, etc.;
+      * funções matemáticas: norma, condição, determinante, posto (rank), traço, transposta, adjunta e cofator, inversa, fatoração (Cholesky, LDLT, LU, QR e SVD), autovalores/vetores e sistemas lineares de equações;
+  * funções personalizadas de múltiplos parâmetros f(x; y; z; …);
+  * métodos numéricos poderosos para busca de raízes e extremos, integração e diferenciação numérica;
+  * procedimentos de soma finita, produto e iteração, séries de Fourier e FFT;
+  * módulos, macros e variáveis de texto (string);
+  * leitura e escrita de dados de/para arquivos de texto, CSV e Excel;
+  * controle de fluxo de programa com condições e loops;
+  * "títulos" e comentários de 'texto' entre aspas;
+  * suporte para Html e CSS em comentários para formatação rica;
+  * plotagem de funções, imagens, tabelas, desenhos paramétricos em SVG, etc.;
+  * geração automática de formulários Html para entrada de dados;
+  * relatórios Html com aparência profissional para visualização e impressão;
+  * exportação para documentos Word (\*.docx) e PDF;
+  * substituição de variáveis e arredondamento inteligente de números;
+  * controle de visibilidade da saída e recolhimento de conteúdo;
+  * suporte para formatos de arquivo de texto simples (\*.txt, \*.cpd) e binário (\*.cpdz).
+
+Este software é desenvolvido utilizando a linguagem de programação C\# e as mais recentes tecnologias de computação. Ele analisa automaticamente a entrada, substitui as variáveis, calcula as expressões e exibe o resultado. Todos os resultados são enviados para um relatório Html de aparência profissional para visualização e impressão.
+
+## Áreas de aplicação
+
+Este software é adequado para engenheiros e outros profissionais que precisam realizar cálculos repetitivos e apresentá-los em documentação oficial, como memórias de cálculo. Eles podem automatizar essa tarefa de forma eficiente criando planilhas Calcpad poderosas e confiáveis. Também pode ajudar professores a preparar exemplos de cálculo, artigos, manuais, livros, etc. Alunos podem usá-lo para resolver diversos problemas, preparar trabalhos de casa, teses, etc.
+
+## Instalação
+
+Um novo instalador será distribuído em momento oportuno (Após tradução da interface)
+O software requer um computador de 64 bits com Windows 10/11 e [Microsoft .NET Desktop Runtime 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
+
+## Licenciamento e termos de uso
+
+Este software é gratuito para uso comercial e não comercial. É distribuído sob a licença MIT:
+
+Copyright © 2025 PROEKTSOFT EOOD®
+
+É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e arquivos de documentação associados (o "Software"), para lidar com o Software sem restrição, incluindo, sem limitação, os direitos de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do Software, e permitir que as pessoas a quem o Software é fornecido o façam, sujeito às seguintes condições:
+
+O aviso de copyright acima e este aviso de permissão deverão ser incluídos em todas as cópias ou partes substanciais do Software.
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO E NÃO INFRAÇÃO. EM NENHUM CASO OS AUTORES OU TITULARES DE COPYRIGHT SERÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO, DANOS OU OUTRA RESPONSABILIDADE, SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU DE OUTRA FORMA, DECORRENTE DE, FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS NEGOCIAÇÕES NO SOFTWARE.
+
+Quaisquer scripts desenvolvidos com Calcpad são de propriedade dos respectivos autores. Eles podem ser usados sem limitações adicionais, exceto aquelas designadas pelos próprios autores.
+
+### Agradecimentos
+
+Este projeto utiliza alguns componentes, softwares e designs adicionais de terceiros. Eles são redistribuídos gratuitamente, sob as condições de licença fornecidas pelos respectivos autores.
+
+1.  Nedelcho Ganchovski e a Proektsoft BG, desenvolvedor original do software
+2.  Os novos e belos ícones foram criados usando [icons8.com](https://icons8.com/).
+3.  A exportação para PDF foi possível graças ao projeto [wkhtmltopdf.org](https://wkhtmltopdf.org/).
+4.  Alguns símbolos são exibidos usando a família de fontes Jost\* da [indestructible type\*](https://indestructibletype.com/), sob a [licença de fonte aberta SIL](https://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web). Os colchetes foram ligeiramente modificados para atender às necessidades da aplicação.
+
+## Como funciona
+
+O software é rápido e fácil de usar. Basta seguir estes passos simples:
+
+1.  **Insira** texto e fórmulas na caixa "**Code**" à esquerda.
+2.  Pressione **F5** ou clique em \<img alt="Play" height="24" src="[https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Play.png](https://github.com/hildebrandopsj/calcpad/blob/main/Help/Images/Play.png)"\> para calcular. Os resultados aparecerão na caixa "**Output**" à direita como um **relatório** Html formatado profissionalmente.
+3.  Clique em \<img alt="PrintPreview" height="24" src="[https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/PrintPreview.png](https://github.com/hildebrandopsj/calcpad/blob/main/Help/Images/PrintPreview.png)"\> para **imprimir** ou em \<img alt="Copy" height="24" src="[https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Copy.png](https://github.com/hildebrandopsj/calcpad/blob/main/Help/Images/Copy.png)"\> para **copiar** a saída.
+    Você também pode **exportar** para um documento **Html** \<img alt="Html" height="24" src="[https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Save.png](https://github.com/hildebrandopsj/calcpad/blob/main/Help/Images/Save.png)"\>, **PDF** \<img alt="PDF" height="24" src="[https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Pdf.png](https://github.com/hildebrandopsj/calcpad/blob/main/Help/Images/Pdf.png)"\> ou **MS Word** \<img alt="Word" height="24" src="[https://github.com/Proektsoftbg/Calcpad/blob/main/Help/Images/Word.png](https://github.com/hildebrandopsj/calcpad/blob/main/Help/Images/Word.png)"\>.
+
+## A linguagem
+
+O Calcpad utiliza uma linguagem de programação simples que inclui os seguintes elementos:
+
+  * Números reais: dígitos 0 - 9 e ponto decimal ".";
+  * Números complexos: re ± imi (ex: 3 - 2i);
+  * Vetores: [v₁; v₂; v₃; …; vₙ];
+  * Matrizes: [M₁₁; M₁₂; … ; M₁ₙ | M₂₁; M₂₂; … ; M₂ₙ | … | Mₘ₁; Mₘ₂; … ; Mₘₙ]
+  * Variáveis:
+     - todas as letras Unicode;
+     - dígitos: 0 - 9;
+     - vírgula: " , ";
+     - símbolos especiais: ′ , ″ , ‴ , ⁗ , ‾ , ø , Ø , ° , ∡ ;
+     - sobrescritos: ⁰ , ¹ , ² , ³ , ⁴ , ⁵ , ⁶ , ⁷ , ⁸ , ⁹ , ⁿ , ⁺ , ⁻ ;
+     - subscritos: ₀ , ₁ , ₂ , ₃ , ₄ , ₅ , ₆ , ₇ , ₈ , ₉ , ₊ , ₋ , ₌ , ₍ , ₎;
+     - " \_ " para subscrito;
+    Qualquer nome de variável deve começar com uma letra. Os nomes diferenciam maiúsculas de minúsculas (case sensitive).
+  * Operadores:
+     "**\!**" - fatorial;
+     "**^**" - expoente;
+     "**/**" - divisão;
+     "**÷**" - força barra de divisão no modo inline e barra (//) no modo pro;
+     "**\\**" - divisão inteira;
+     "**⦼**" - módulo (resto);
+     "**\***" - multiplicação;
+     "**-**" - menos;
+     "**+**" - mais;
+     "**≡**" - igual a;
+     "**≠**" - diferente de;
+     "**\<**" - menor que;
+     "**\>**" - maior que;
+     "**≤**" - menor ou igual;
+     "**≥**" - maior ou igual;
+     "**∧**" - "E" lógico;
+     "**∨**" - "OU" lógico;
+     "**⊕**" - "XOR" lógico;
+     "**∠**" - fasor A∠φ (\<\<);
+     "**=**" - atribuição ou definição de variável, função ou macro;
+     "**←**" - atribuição para um nível externo ou variável global em bloco (\<\*);
+  * Funções personalizadas do tipo f (x; y; z; ... );
+  * Funções integradas:
+     Trigonométricas:
+      **sin**(x)  - seno;
+      **cos**(x)  - cosseno;
+      **tan**(x)  - tangente;
+      **csc**(x)  - cossecante;
+      **sec**(x)  - secante;
+      **cot**(x)  - cotangente;
+     Hiperbólicas:
+      **sinh**(x) - seno hiperbólico;
+      **cosh**(x) - cosseno hiperbólico;
+      **tanh**(x) - tangente hiperbólica;
+      **csch**(x) - cossecante hiperbólica;
+      **sech**(x) - secante hiperbólica;
+      **coth**(x) - cotangente hiperbólica;
+     Trigonométricas Inversas:
+      **asin**(x) - arco seno;
+      **acos**(x) - arco cosseno;
+      **atan**(x) - arco tangente;
+      **atan2**(x; y) - o ângulo cuja tangente é o quociente entre y e x;
+      **acsc**(x) - arco cossecante;
+      **asec**(x) - arco secante;
+      **acot**(x) - arco cotangente;
+     Hiperbólicas Inversas:
+      **asinh**(x) - arco seno hiperbólico;
+      **acosh**(x) - arco cosseno hiperbólico;
+      **atanh**(x) - arco tangente hiperbólico;
+      **acsch**(x) - arco cossecante hiperbólico;
+      **asech**(x) - arco secante hiperbólico;
+      **acoth**(x) - arco cotangente hiperbólico;
+     Logarítmicas, exponenciais e raízes:
+      **log**(x)   - logaritmo decimal;
+      **ln**(x)    - logaritmo natural;
+      **log\_2**(x) - logaritmo binário;
+      **exp**(x)   - exponencial natural;
+      **sqr**(x) ou **sqrt**(x) - raiz quadrada;
+      **cbrt**(x) - raiz cúbica;
+      **root**(x; n) - raiz enésima;
+     Arredondamento:
+      **round**(x) - arredonda para o inteiro mais próximo;
+      **floor**(x) - arredonda para o inteiro menor (em direção a -∞);
+      **ceiling**(x) - arredonda para o inteiro maior (em direção a +∞);
+      **trunc**(x) - arredonda para o inteiro menor (em direção a zero);
+     Inteiros:
+      **mod**(x; y) - o resto de uma divisão inteira;
+      **gcd**(x; y; z...) - o máximo divisor comum de vários inteiros;
+      **lcm**(x; y; z...) - o mínimo múltiplo comum de vários inteiros;
+     Complexos:
+      **re**(z)    - a parte real de um número complexo;
+      **im**(z)    - a parte imaginária de um número complexo;
+      **abs**(z)   - valor absoluto/módulo;
+      **phase**(z) - a fase de um número complexo;
+      **conj**(z)  - o conjugado de um número complexo;
+     Agregação e interpolação:
+      **min**(x; y; z...) - mínimo de múltiplos valores;
+      **max**(x; y; z...) - máximo de múltiplos valores;
+      **sum**(x; y; z...) - soma de múltiplos valores = x + y + z...;
+      **sumsq**(x; y; z...) - soma dos quadrados = x² + y² + z²...;
+      **srss**(x; y; z...) - raiz quadrada da soma dos quadrados = sqrt(x² + y² + z²...);
+      **average**(x; y; z...) - média de múltiplos valores = (x + y + z...)/n;
+      **product**(x; y; z...) - produto de múltiplos valores = x·y·z...;
+      **mean**(x; y; z...) - média geométrica = raiz enésima(x·y·z...);
+      **take**(n; a; b; c...) - retorna o n-ésimo elemento da lista;
+      **line**(x; a; b; c...) - interpolação linear;
+      **spline**(x; a; b; c...) - interpolação por spline de Hermite;
+     Condicional e lógico:
+      **if**(*cond*; *valor-se-verdade*; *valor-se-falso*) - avaliação condicional;
+      **switch**(*cond1*; *valor1*; *cond2*; *valor2*; … ; *padrão*) - avaliação seletiva;
+      **not**(x) - "NÃO" lógico;
+      **and**(x; y; z...) - "E" lógico;
+      **or**(x; y; z...) - "OU" lógico;
+      **xor**(x; y; z...) - "XOR" lógico;
+     Outros:
+      **sign**(x) - o sinal de um número;
+      **random**(x) - número aleatório entre 0 e x;
+      **getunits**(x) - obtém as unidades de x sem o valor. Retorna 1 se x for adimensional;
+      **setunits**(x; u) - define as unidades u para x, onde x pode ser escalar, vetor ou matriz;
+      **clrunits**(x) - remove as unidades de um escalar, vetor ou matriz x;
+      **hp**(x) - converte x para seu tipo equivalente de alto desempenho (hp);
+      **ishp**(x) - verifica se o tipo de x é um vetor ou matriz de alto desempenho (hp);
+     Vetor:
+      \<ins\>Criação:\</ins\>
+      **vector**(n) - cria um vetor vazio com comprimento n;
+      **vector\_hp**(n) - cria um vetor vazio de alto desempenho (hp) com comprimento n;
+      **range**(x1; xn; s) - cria um vetor com valores de x1 a xn com passo s;
+      **range\_hp**(x1; xn; s) - cria um vetor hp a partir de um intervalo de valores como acima;
+      \<ins\>Estrutural:\</ins\>
+      **len**(v) - retorna o comprimento do vetor v;
+      **size**(v) - o tamanho real do vetor v - o índice do último elemento não nulo;
+      **resize**(v; n) - define um novo comprimento n para o vetor v;
+      **fill**(v; x) - preenche o vetor v com o valor x;
+      **join**(A; b; c…) - cria um vetor unindo os argumentos: matrizes, vetores e escalares;
+      **slice**(v; i₁; i₂) - retorna a parte do vetor v delimitada pelos índices i₁ e i₂ inclusive;
+      **first**(v; n) - os primeiros n elementos do vetor v;
+      **last**(v; n) - os últimos n elementos do vetor v;
+      **extract**(v; i) - extrai os elementos de v cujos índices estão contidos em i;
+      \<ins\>Dados:\</ins\>
+      **sort**(v) - ordena os elementos do vetor v em ordem crescente;
+      **rsort**(v) - ordena os elementos do vetor v em ordem decrescente;
+      **order**(v) - os índices do vetor v, organizados pela ordem crescente de seus elementos;
+      **revorder**(v) - os índices do vetor v, organizados pela ordem decrescente de seus elementos;
+      **reverse**(v) - um novo vetor contendo os elementos de v em ordem inversa;
+      **count**(v; x; i) - o número de elementos em v, após o i-ésimo, que são iguais a x;
+      **search**(v; x; i)- o índice do primeiro elemento em v, após o i-ésimo, que é igual a x;
+      **find**(v; x; i) ou
+      **find\_eq**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são = x;
+      **find\_ne**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≠ x;
+      **find\_lt**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são \< x;
+      **find\_le**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≤ x;
+      **find\_gt**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são \> x;
+      **find\_ge**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≥ x;
+      **lookup**(a; b; x) ou
+      **lookup\_eq**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são = x;
+      **lookup\_ne**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≠ x;
+      **lookup\_lt**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são \< x;
+      **lookup\_le**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≤ x;
+      **lookup\_gt**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são \> x;
+      **lookup\_ge**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≥ x;
+      \<ins\>Matemática:\</ins\>
+      **norm\_1**(v) - norma L1 (Manhattan) do vetor v;
+      **norm**(v) ou
+      **norm\_2**(v) ou
+      **norm\_e**(v) - norma L2 (Euclidiana) do vetor v;
+      **norm\_p**(v; p) - norma Lp do vetor v;
+      **norm\_i**(v) - norma L∞ (infinito) do vetor v;
+      **unit**(v) - o vetor v normalizado (com norma L2 = 1);
+      **dot**(a; b) - produto escalar de dois vetores a e b;
+      **cross**(a; b) - produto vetorial de dois vetores a e b (com comprimento 2 ou 3);
+     Matriz:
+      \<ins\>Criação:\</ins\>
+      **matrix**(m; n) - cria uma matriz vazia com dimensões m⨯n;
+      **identity**(n) - cria uma matriz identidade com dimensões n⨯n;
+      **diagonal**(n; d) - cria uma matriz diagonal n⨯n e preenche a diagonal com o valor d;
+      **column**(m; c) - cria uma matriz coluna com dimensões m⨯1, preenchida com o valor c;
+      **utriang**(n) - cria uma matriz triangular superior com dimensões n⨯n;
+      **ltriang**(n) - cria uma matriz triangular inferior com dimensões n⨯n;
+      **symmetric**(n) - cria uma matriz simétrica com dimensões n⨯n;
+      **matrix\_hp**(m; n) - cria uma matriz de alto desempenho com dimensões m⨯n;
+      **identity\_hp**(n) - cria uma matriz identidade de alto desempenho com dimensões n⨯n;
+      **diagonal\_hp**(n; d) - cria uma matriz diagonal hp n⨯n preenchida com valor d;
+      **column\_hp**(m; c) - cria uma matriz coluna hp m⨯1 preenchida com valor c;
+      **utriang\_hp**(n) - cria uma matriz triangular superior hp n⨯n;
+      **ltriang\_hp**(n) - cria uma matriz triangular inferior hp n⨯n;
+      **symmetric\_hp**(n) - cria uma matriz simétrica hp com dimensões n⨯n;
+      **vec2diag**(v) - cria uma matriz diagonal a partir dos elementos do vetor v;
+      **vec2row**(v) - cria uma matriz linha a partir dos elementos do vetor v;
+      **vec2col**(v) - cria uma matriz coluna a partir dos elementos do vetor v;
+      **join\_cols**(c₁; c₂; c₃…) - cria uma nova matriz unindo vetores coluna;
+      **join\_rows**(r₁; r₂; r₃…) - cria uma nova matriz unindo vetores linha;
+      **augment**(A; B; C…) - cria uma nova matriz anexando matrizes A; B; C lado a lado;
+      **stack**(A; B; C…) - cria uma nova matriz empilhando matrizes A; B; C uma abaixo da outra;
+      \<ins\>Estrutural:\</ins\>
+      **n\_rows**(M) - número de linhas na matriz M;
+      **n\_cols**(M) - número de colunas na matriz M;
+      **mresize**(M; m; n) - define novas dimensões m e n para a matriz M;
+      **mfill**(M; x) - preenche a matriz M com o valor x;
+      **fill\_row**(M; i; x) - preenche a i-ésima linha da matriz M com o valor x;
+      **fill\_col**(M; j; x) - preenche a j-ésima coluna da matriz M com o valor x;
+      **copy**(A; B; i; j) - copia todos os elementos de A para B, começando nos índices i e j de B;
+      **add**(A; B; i; j) - soma todos os elementos de A aos de B, começando nos índices i e j de B;
+      **row**(M; i) - extrai a i-ésima linha da matriz M como um vetor;
+      **col**(M; j) - extrai a j-ésima coluna da matriz M como um vetor;
+      **extract\_rows**(M; i) - extrai as linhas da matriz M cujos índices estão contidos no vetor i;
+      **extract\_cols**(M; j) - extrai as colunas da matriz M cujos índices estão contidos no vetor j;
+      **diag2vec**(M) - extrai os elementos da diagonal da matriz M para um vetor;
+      **submatrix**(M; i₁; i₂; j₁; j₂) - extrai uma submatriz de M, delimitada pelas linhas i₁ e i₂ e colunas j₁ e j₂, incl.;
+      \<ins\>Dados:\</ins\>
+      **sort\_cols**(M; i) - ordena as colunas de M com base nos valores da linha i em ordem crescente;
+      **rsort\_cols**(M; i) - ordena as colunas de M com base nos valores da linha i em ordem decrescente;
+      **sort\_rows**(M; j) - ordena as linhas de M com base nos valores da coluna j em ordem crescente;
+      **rsort\_rows**(M; j) - ordena as linhas de M com base nos valores da coluna j em ordem decrescente;
+      **order\_cols**(M; i) - os índices das colunas de M baseados na ordenação dos valores da linha i em ordem crescente;
+      **revorder\_cols**(M; i) - os índices das colunas de M baseados na ordenação dos valores da linha i em ordem decrescente;
+      **order\_rows**(M; j) - os índices das linhas de M baseados na ordenação dos valores na coluna j em ordem crescente;
+      **revorder\_rows**(M; j) - os índices das linhas de M baseados na ordenação dos valores na coluna j em ordem decrescente;
+      **mcount**(M; x) - número de ocorrências do valor x na matriz M;
+      **msearch**(M; x; i; j) - vetor com os dois índices da primeira ocorrência de x na matriz M, partindo dos índices i e j;
+      **mfind**(M; x) ou
+      **mfind\_eq**(M; x) - os índices de todos os elementos em M que são = x;
+      **mfind\_ne**(M; x) - os índices de todos os elementos em M que são ≠ x;
+      **mfind\_lt**(M; x) - os índices de todos os elementos em M que são \< x;
+      **mfind\_le**(M; x) - os índices de todos os elementos em M que são ≤ x;
+      **mfind\_gt**(M; x) - os índices de todos os elementos em M que são \> x;
+      **mfind\_ge**(M; x) - os índices de todos os elementos em M que são ≥ x;
+      **hlookup**(M; x; i₁; i₂) ou
+      **hlookup\_eq**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são = x;
+      **hlookup\_ne**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≠ x;
+      **hlookup\_lt**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são \< x;
+      **hlookup\_le**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≤ x;
+      **hlookup\_gt**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são \> x;
+      **hlookup\_ge**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≥ x;
+      **vlookup**(M; x; j₁; j₂) ou
+      **vlookup\_eq**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são = x;
+      **vlookup\_ne**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≠ x;
+      **vlookup\_lt**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são \< x;
+      **vlookup\_le**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≤ x;
+      **vlookup\_gt**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são \> x;
+      **vlookup\_ge**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≥ x;
+      \<ins\>Matemática:\</ins\>
+      **hprod**(A; B) - produto de Hadamard das matrizes A e B;
+      **fprod**(A; B) - produto de Frobenius das matrizes A e B;
+      **kprod**(A; B) - produto de Kronecker das matrizes A e B;
+      **mnorm\_1**(M) - norma L1 da matriz M;
+      **mnorm**(M) ou
+      **mnorm\_2**(M) - norma L2 da matriz M;
+      **mnorm\_e**(M) - norma de Frobenius da matriz M;
+      **mnorm\_i**(M) - norma L∞ da matriz M;
+      **cond\_1**(M) - número de condição de M baseado na norma L1;
+      **cond**(M) ou
+      **cond\_2**(M) - número de condição de M baseado na norma L2;
+      **cond\_e**(M) - número de condição de M baseado na norma de Frobenius;
+      **cond\_i**(M) - número de condição de M baseado na norma L∞;
+      **det**(M) - determinante da matriz M;
+      **rank**(M) - posto da matriz M;
+      **trace**(M) - traço da matriz M;
+      **transp**(M) - transposta da matriz M;
+      **adj**(M) - adjunta da matriz M;
+      **cofactor**(M) - matriz de cofatores de M;
+      **eigenvals**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovalores da matriz M como um vetor;
+      **eigenvecs**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovetores da matriz M como uma matriz row-major;
+      **eigen**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovalores e autovetores de M como uma matriz row-major;
+      **cholesky**(M) - decomposição de Cholesky de uma matriz M simétrica e definida positiva;
+      **lu**(M) - decomposição LU da matriz M;
+      **qr**(M) - decomposição QR da matriz M;
+      **svd**(M) - decomposição em valores singulares (SVD) de M;
+      **inverse**(M) - inversa da matriz M;
+      **lsolve**(A; b) - resolve o sistema de equações lineares Ax = b usando decomposição LDLT para matrizes simétricas e LU para não simétricas;
+      **clsolve**(A; b) - resolve a equação matricial linear Ax = b com matriz A simétrica e definida positiva usando decomposição de Cholesky;
+      **slsolve**(A; b) - resolve a equação matricial linear Ax = b com matriz A hp simétrica e definida positiva usando o método do gradiente conjugado precondicionado (PCG);
+      **msolve**(A; B) - resolve a equação matricial generalizada AX = B usando decomposição LDLT para matrizes simétricas e LU para não simétricas;
+      **cmsolve**(A; B) - resolve a equação matricial generalizada AX = B com matriz A simétrica e definida positiva usando decomposição de Cholesky;
+      **smsolve**(A; B) - resolve a equação matricial generalizada AX = B com matriz A hp simétrica e definida positiva usando o método PCG;
+      **matmul**(A; B) - multiplicação rápida de matrizes hp quadradas usando o algoritmo paralelo de Winograd. O operador de multiplicação A\*B o utiliza automaticamente para todas as matrizes hp quadradas de tamanho 10 ou superior;
+      **fft**(M) - realiza a transformada rápida de Fourier da matriz row-major M. Deve ter uma linha para dados reais e duas linhas para complexos;
+      **ift**(M) - realiza a transformada inversa de Fourier da matriz row-major M. Deve ter uma linha para dados reais e duas linhas para complexos;
+      **\<ins\>Interpolação dupla:\</ins\>**
+      **take**(x; y; M) - retorna o elemento da matriz M nos índices x e y;
+      **line**(x; y; M) - interpolação linear dupla dos elementos da matriz M baseada nos valores de x e y;
+      **spline**(x; y; M) - interpolação dupla por spline de Hermite dos elementos da matriz M baseada nos valores de x e y.
+      *Tol* - tolerância alvo para o resolvedor iterativo PCG.
+  * Comentários: "Título" ou 'texto' em aspas duplas ou simples, respectivamente. HTML, CSS, JS e SVG são permitidos.
+  * Gráficos e plotagem:
+     $Plot { f(x) @ x = a : b } - gráfico simples;
+    &emsp;$Plot { x(t) | y(t) @ t = a : b } - paramétrico;
+     $Plot { f1(x) & f2(x) & ... @ x = a : b } - múltiplos;
+    &emsp;$Plot { x1(t) | y1(t) & x2(t) | y2(t) & ... @ x = a : b } - múltiplos paramétricos;
+     $Map { f(x; y) @ x = a : b & y = c : d }  - mapa de cores 2D de uma superfície 3D;
+     PlotHeight - altura da área do gráfico em pixels;
+     PlotWidth - largura da área do gráfico em pixels;
+     PlotSVG - desenha gráficos em formato vetorial (SVG);
+     PlotAdaptive - usa malha adaptativa (= 1) para plotagem de funções ou uniforme (= 0);
+     PlotStep - o tamanho da malha para plotagem de mapa;
+     PlotPalette - o número da paleta de cores a ser usada para gráficos de superfície (0-9);
+     PlotShadows - desenha gráficos de superfície com sombras;
+     PlotSmooth - transição suave de cores (= 1) ou isobandas (= 0) para gráficos de superfície;
+     PlotLightDir - direção da fonte de luz (0-7) no sentido horário.
+  * Métodos iterativos e numéricos:
+     $Root { f(x) = const @ x = a : b } - busca de raiz para f(x) = const;
+    &emsp;$Root { f(x) @ x = a : b } - busca de raiz para f(x) = 0;
+     $Find { f(x) @ x = a : b } - similar ao anterior, mas não exige que x seja uma solução precisa;
+    &emsp;$Sup { f(x) @ x = a : b } - máximo local de uma função;
+     $Inf { f(x) @ x = a : b } - mínimo local de uma função;
+    &emsp;$Area { f(x) @ x = a : b } - integração numérica adaptativa de Gauss-Lobatto;
+     $Integral { f(x) @ x = a : b } - integração numérica Tanh-Sinh;
+    &emsp;$Slope { f(x) @ x = a } - diferenciação numérica por extrapolação de Richardson;
+     $Derivative { f(x) @ x = a } - diferenciação numérica por método de passo complexo;
+    &emsp;$Sum { f(k) @ k = a : b } - soma iterativa;
+     $Product { f(k) @ k = a : b } - produto iterativo;
+    &emsp;$Repeat { f(k) @ k = a : b } - bloco de expressão iterativo com contador;
+     $While { condição; expressões } - bloco de expressão iterativo com condição;
+    &emsp;$Block { expressões } - bloco de expressão multilinha;
+     $Inline { expressões } - bloco de expressão inline;
+     Precision - precisão relativa para métodos numéricos \[10\<sup\>-2\</sup\>; 10\<sup\>-16\</sup\>\] (padrão é 10\<sup\>-12\</sup\>)
+  * Controle de fluxo de programa:
+     Simples:
+      \#if *condição*
+       *Seu código aqui*
+      \#end if
+     Alternativo:
+      \#if *condição*
+       *Seu código aqui*
+      \#else
+       *Outro código*
+      \#end if
+     Completo:
+      \#if *condição1*
+       *Seu código aqui*
+      \#else if *condição2*
+       *Seu código aqui*
+      \#else
+       *Outro código*
+      \#end if
+    Você pode adicionar ou omitir quantos "\#else if" forem necessários. Apenas um "\#else" é permitido (também opcional).
+  * Blocos de iteração:
+     Simples:
+      \#repeat *número de repetições*
+       *Seu código aqui*
+      \#loop
+     Com interrupção/continuação condicional:
+      \#repeat *número de repetições*
+       *Seu código aqui*
+       \#if *condição*
+        \#break ou \#continue
+       \#end if
+       *Mais código*
+      \#loop
+     Com contador:
+      \#for contador = início : fim
+       *Seu código aqui*
+      \#loop
+     Com condição:
+      \#while *condição*
+       *Seu código aqui*
+      \#loop
+  * Módulos e macros/variáveis de texto:
+     Módulos:
+      \#include *nome\_do\_arquivo* - inclui arquivo externo (módulo);
+      \#local - inicia seção local (não será incluída);
+      \#global - inicia seção global (será incluída);
+     Variável de texto inline:
+      \#def *nome\_da\_variavel$* = *conteúdo*
+    &emsp;Variável de texto multilinha:
+    &emsp;&emsp;#def *nome_da_variavel$*
+       *conteúdo linha 1*
+       *conteúdo linha 2*
+       ...
+      \#end def
+     Macro de texto inline:
+      \#def *nome\_da\_macro$*(*param1$*; *param2$*;...) = *conteúdo*
+    &emsp;Macro de texto multilinha:
+    &emsp;&emsp;#def *nome_da_macro$*(*param1$*; *param2$*;...)
+       *conteúdo linha 1*
+       *conteúdo linha 2*
+       ...
+      \#end def
+  * Importação/Exportação de dados externos:
+     Arquivos de Texto/CSV:
+      \#read M from arquivo.txt@R1C1:R2C2 TYPE=R SEP=',' - lê matriz M de arquivo texto/CSV;
+      \#write M to arquivo.txt@R1C1:R2C2 TYPE=N SEP=',' - escreve matriz M em arquivo texto/CSV;
+      \#append M to arquivo.txt@R1C1:R2C2 TYPE=N SEP=',' - anexa matriz M em arquivo texto/CSV;
+     Arquivos Excel (xlsx e xlsm):
+      \#read M from arquivo.xlsx@Planilha1\!A1:B2 TYPE=R - lê matriz M de arquivo Excel;
+      \#write M to arquivo.xlsx@Planilha1\!A1:B2 TYPE=N - escreve matriz M em arquivo Excel;
+      \#append M to arquivo.xlsx@Planilha1\!A1:B2 TYPE=N - anexa matriz M em arquivo Excel (mesmo que write);
+     Planilha, intervalo, TYPE e SEP podem ser omitidos.
+     Para o comando \#read, TYPE pode ser [R|D|C|S|U|L|V].
+     Para comandos \#write e \#append, TYPE pode ser Y ou N.
+  * Proteção de escrita: \#const - declara uma variável ou função constante (somente leitura);
+  * Controle de saída:
+     \#hide - oculta o conteúdo do relatório;
+     \#show - sempre mostra o conteúdo (padrão);
+     \#pre  - mostra o conteúdo seguinte apenas antes dos cálculos;
+     \#post - mostra o conteúdo seguinte apenas após os cálculos;
+     \#val  - mostra apenas o resultado final, sem a equação;
+     \#equ  - mostra equações completas e resultados (padrão);
+     \#noc  - mostra apenas equações sem resultados (sem cálculos);
+     \#nosub  - não substitui variáveis (sem substituição);
+     \#novar  - mostra equações apenas com valores substituídos (sem variáveis);
+     \#varsub - mostra equações com variáveis e valores substituídos (padrão);
+     \#split - divide equações que não cabem em uma única linha;
+     \#wrap - quebra equações que não cabem em uma única linha (padrão);
+     \#round n - arredonda a saída para n dígitos após o ponto decimal;
+     \#round default - restaura o arredondamento para as configurações padrão;
+     \#format FFFF - especifica uma string de formato personalizada;
+     \#format default - restaura a formatação padrão;
+     \#md on - habilita markdown nos comentários;
+     \#md off - desabilita markdown nos comentários;
+     \#phasor - define formato de saída de complexos para polar fasorial: A∠φ;
+     \#complex - define formato de saída de complexos para algébrico cartesiano: a + bi.
+     Cada um dos comandos acima é efetivo após a linha atual até o fim do relatório ou outro comando que o sobrescreva.
+  * Pontos de interrupção (breakpoints) para execução passo a passo:
+     \#pause - calcula até a linha atual e aguarda retomada manual;
+     \#input - renderiza um formulário de entrada até a linha atual e aguarda entrada do usuário.
+  * Seletores de unidades trigonométricas: \#deg - graus, \#rad - radianos, \#gra - grados;
+  * Separador para unidades de destino: |, por exemplo: `3ft + 12in|cm` mostrará 121,92 cm;
+  * Adimensionais: %, ‰, ‱, pcm, ppm, ppb, ppt, ppq;
+  * Unidades de ângulo: °, ′, ″, deg, rad, grad, rev;
+  * Unidades métricas (SI e compatíveis):
+     Massa: g, hg, kg, t, kt, Mt, Gt, dg, cg, mg, μg, Da, u;
+     Comprimento: m, km, dm, cm, mm, μm, nm, pm, AU, ly;
+     Tempo: s, ms, μs, ns, ps, min, h, d, w, y;
+     Frequência: Hz, kHz, MHz, GHz, THz, mHz, μHz, nHz, pHz, rpm;
+     Velocidade: kmh;
+     Corrente elétrica: A, kA, MA, GA, TA, mA, μA, nA, pA;
+     Temperatura: °C, Δ°C, K;
+     Quantidade de substância: mol;
+     Intensidade luminosa: cd;
+     Área: a, daa, ha;
+     Volume: L, daL, hL, dL, cL, mL, μL, nL, pL;
+     Força: dyn N, daN, hN, kN, MN, GN, TN, gf, kgf, tf;
+     Momento: Nm, kNm;
+     Pressão: Pa, daPa, hPa, kPa, MPa, GPa, TPa, dPa, cPa, mPa, μPa, nPa, pPa,
+        bar, mbar, μbar, atm, at, Torr, mmHg;
+     Viscosidade: P, cP, St, cSt;
+     Energia/trabalho: J, kJ, MJ, GJ, TJ, mJ, μJ, nJ, pJ,
+        Wh, kWh, MWh, GWh, TWh, mWh, μWh, nWh, pWh
+        eV, keV, MeV, GeV, TeV, PeV, EeV, cal, kcal, erg;
+     Potência: W, kW, MW, GW, TW, mW, μW, nW, pW, hpM, ks;
+        VA, kVA, MVA, GVA, TVA, mVA, μVA, nVA, pVA,
+        VAR, kVAR, MVAR, GVAR, TVAR, mVAR, μVAR, nVAR, pVAR, hpM, ks;
+     Carga elétrica: C, kC, MC, GC, TC, mC, μC, nC, pC, Ah, mAh;
+     Potencial: V, kV, MV, GV, TV, mV, μV, nV, pV;
+     Capacitância: F, kF, MF, GF, TF, mF, μF, nF, pF;
+     Resistência: Ω, kΩ, MΩ, GΩ, TΩ, mΩ, μΩ, nΩ, pΩ;
+     Condutância: S, kS, MS, GS, TS, mS, μS, nS, pS, ℧, k℧, M℧, G℧, T℧, m℧, μ℧, n℧, p℧;
+     Fluxo magnético: Wb , kWb, MWb, GWb, TWb, mWb, μWb, nWb, pWb;
+     Densidade de fluxo magnético: T, kT, MT, GT, TT, mT, μT, nT, pT;
+     Indutância: H, kH, MH, GH, TH, mH, μH, nH, pH;
+     Fluxo luminoso: lm;
+     Iluminância: lx;
+     Radioatividade: Bq, kBq, MBq, GBq, TBq, mBq, μBq, nBq, pBq, Ci, Rd;
+     Dose absorvida: Gy, kGy, MGy, GGy, TGy, mGy, μGy, nGy, pGy;
+     Dose equivalente: Sv, kSv, MSv, GSv, TSv, mSv, μSv, nSv, pSv;
+     Atividade catalítica: kat;
+  * Unidades não métricas (Imperial/US):
+     Massa: gr, dr, oz, lb (ou lbm, lb\_m), klb, kipm (ou kip\_m), st, qr,
+        cwt (ou cwt\_UK, cwt\_US), ton (ou ton\_UK, ton\_US), slug;
+     Comprimento: th, in, ft, yd, ch, fur, mi, ftm (ou ftm\_UK, ftm\_US),
+         cable (ou cable\_UK, cable\_US), nmi, li, rod, pole, perch, lea;
+     Velocidade: mph, knot;
+     Temperatura: °F, Δ°F, °R;
+     Área: rood, ac;
+     Volume, fluido: fl\_oz, gi, pt, qt, gal, bbl, ou:
+       fl\_oz\_UK, gi\_UK, pt\_UK, qt\_UK, gal\_UK, bbl\_UK,
+       fl\_oz\_US, gi\_US, pt\_US, qt\_US, gal\_US, bbl\_US,
+     Volume, seco: (US) pt\_dry, (US) qt\_dry, (US) gal\_dry, (US) bbl\_dry,
+       pk (ou pk\_UK, pk\_US), bu (or bu\_UK, bu\_US);
+     Força: ozf (ou oz\_f), lbf (ou lb\_f), kip (ou kipf, kip\_f), tonf (ou ton\_f), pdl;
+     Pressão: osi, osf psi, psf, ksi, ksf, tsi, tsf, inHg;
+     Energia/trabalho: BTU, therm, (ou therm\_UK, therm\_US), quad;
+     Potência: hp, hpE, hpS;
+  * Unidades personalizadas - .Nome = expressão.
+    Nomes podem incluir símbolos de moedas: €, £, ₤, ¥, ¢, ₽, ₹, ₩, ₪.
