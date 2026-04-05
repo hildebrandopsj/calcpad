@@ -129,313 +129,313 @@ O Calcpad utiliza uma linguagem de programação simples que inclui os seguintes
       **asin**(x) - arco seno;  
       **acos**(x) - arco cosseno;  
       **atan**(x) - arco tangente;  
-      **atan2**(x; y) - o ângulo cuja tangente é o quociente entre y e x;
-      **acsc**(x) - arco cossecante;
-      **asec**(x) - arco secante;
-      **acot**(x) - arco cotangente;
-     Hiperbólicas Inversas:
-      **asinh**(x) - arco seno hiperbólico;
-      **acosh**(x) - arco cosseno hiperbólico;
-      **atanh**(x) - arco tangente hiperbólico;
-      **acsch**(x) - arco cossecante hiperbólico;
-      **asech**(x) - arco secante hiperbólico;
-      **acoth**(x) - arco cotangente hiperbólico;
-     Logarítmicas, exponenciais e raízes:
-      **log**(x)   - logaritmo decimal;
-      **ln**(x)    - logaritmo natural;
-      **log\_2**(x) - logaritmo binário;
-      **exp**(x)   - exponencial natural;
-      **sqr**(x) ou **sqrt**(x) - raiz quadrada;
-      **cbrt**(x) - raiz cúbica;
-      **root**(x; n) - raiz enésima;
-     Arredondamento:
-      **round**(x) - arredonda para o inteiro mais próximo;
-      **floor**(x) - arredonda para o inteiro menor (em direção a -∞);
-      **ceiling**(x) - arredonda para o inteiro maior (em direção a +∞);
-      **trunc**(x) - arredonda para o inteiro menor (em direção a zero);
-     Inteiros:
-      **mod**(x; y) - o resto de uma divisão inteira;
-      **gcd**(x; y; z...) - o máximo divisor comum de vários inteiros;
-      **lcm**(x; y; z...) - o mínimo múltiplo comum de vários inteiros;
-     Complexos:
-      **re**(z)    - a parte real de um número complexo;
-      **im**(z)    - a parte imaginária de um número complexo;
-      **abs**(z)   - valor absoluto/módulo;
-      **phase**(z) - a fase de um número complexo;
-      **conj**(z)  - o conjugado de um número complexo;
-     Agregação e interpolação:
-      **min**(x; y; z...) - mínimo de múltiplos valores;
-      **max**(x; y; z...) - máximo de múltiplos valores;
-      **sum**(x; y; z...) - soma de múltiplos valores = x + y + z...;
-      **sumsq**(x; y; z...) - soma dos quadrados = x² + y² + z²...;
-      **srss**(x; y; z...) - raiz quadrada da soma dos quadrados = sqrt(x² + y² + z²...);
-      **average**(x; y; z...) - média de múltiplos valores = (x + y + z...)/n;
-      **product**(x; y; z...) - produto de múltiplos valores = x·y·z...;
-      **mean**(x; y; z...) - média geométrica = raiz enésima(x·y·z...);
-      **take**(n; a; b; c...) - retorna o n-ésimo elemento da lista;
-      **line**(x; a; b; c...) - interpolação linear;
-      **spline**(x; a; b; c...) - interpolação por spline de Hermite;
-     Condicional e lógico:
-      **if**(*cond*; *valor-se-verdade*; *valor-se-falso*) - avaliação condicional;
-      **switch**(*cond1*; *valor1*; *cond2*; *valor2*; … ; *padrão*) - avaliação seletiva;
-      **not**(x) - "NÃO" lógico;
-      **and**(x; y; z...) - "E" lógico;
-      **or**(x; y; z...) - "OU" lógico;
-      **xor**(x; y; z...) - "XOR" lógico;
-     Outros:
-      **sign**(x) - o sinal de um número;
-      **random**(x) - número aleatório entre 0 e x;
-      **getunits**(x) - obtém as unidades de x sem o valor. Retorna 1 se x for adimensional;
-      **setunits**(x; u) - define as unidades u para x, onde x pode ser escalar, vetor ou matriz;
-      **clrunits**(x) - remove as unidades de um escalar, vetor ou matriz x;
-      **hp**(x) - converte x para seu tipo equivalente de alto desempenho (hp);
-      **ishp**(x) - verifica se o tipo de x é um vetor ou matriz de alto desempenho (hp);
-     Vetor:
-      \<ins\>Criação:\</ins\>
-      **vector**(n) - cria um vetor vazio com comprimento n;
-      **vector\_hp**(n) - cria um vetor vazio de alto desempenho (hp) com comprimento n;
-      **range**(x1; xn; s) - cria um vetor com valores de x1 a xn com passo s;
-      **range\_hp**(x1; xn; s) - cria um vetor hp a partir de um intervalo de valores como acima;
-      \<ins\>Estrutural:\</ins\>
-      **len**(v) - retorna o comprimento do vetor v;
-      **size**(v) - o tamanho real do vetor v - o índice do último elemento não nulo;
-      **resize**(v; n) - define um novo comprimento n para o vetor v;
-      **fill**(v; x) - preenche o vetor v com o valor x;
-      **join**(A; b; c…) - cria um vetor unindo os argumentos: matrizes, vetores e escalares;
-      **slice**(v; i₁; i₂) - retorna a parte do vetor v delimitada pelos índices i₁ e i₂ inclusive;
-      **first**(v; n) - os primeiros n elementos do vetor v;
-      **last**(v; n) - os últimos n elementos do vetor v;
-      **extract**(v; i) - extrai os elementos de v cujos índices estão contidos em i;
-      \<ins\>Dados:\</ins\>
-      **sort**(v) - ordena os elementos do vetor v em ordem crescente;
-      **rsort**(v) - ordena os elementos do vetor v em ordem decrescente;
-      **order**(v) - os índices do vetor v, organizados pela ordem crescente de seus elementos;
-      **revorder**(v) - os índices do vetor v, organizados pela ordem decrescente de seus elementos;
-      **reverse**(v) - um novo vetor contendo os elementos de v em ordem inversa;
-      **count**(v; x; i) - o número de elementos em v, após o i-ésimo, que são iguais a x;
-      **search**(v; x; i)- o índice do primeiro elemento em v, após o i-ésimo, que é igual a x;
-      **find**(v; x; i) ou
-      **find\_eq**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são = x;
-      **find\_ne**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≠ x;
-      **find\_lt**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são \< x;
-      **find\_le**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≤ x;
-      **find\_gt**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são \> x;
-      **find\_ge**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≥ x;
-      **lookup**(a; b; x) ou
-      **lookup\_eq**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são = x;
-      **lookup\_ne**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≠ x;
-      **lookup\_lt**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são \< x;
-      **lookup\_le**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≤ x;
-      **lookup\_gt**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são \> x;
-      **lookup\_ge**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≥ x;
-      \<ins\>Matemática:\</ins\>
-      **norm\_1**(v) - norma L1 (Manhattan) do vetor v;
-      **norm**(v) ou
-      **norm\_2**(v) ou
-      **norm\_e**(v) - norma L2 (Euclidiana) do vetor v;
-      **norm\_p**(v; p) - norma Lp do vetor v;
-      **norm\_i**(v) - norma L∞ (infinito) do vetor v;
-      **unit**(v) - o vetor v normalizado (com norma L2 = 1);
-      **dot**(a; b) - produto escalar de dois vetores a e b;
-      **cross**(a; b) - produto vetorial de dois vetores a e b (com comprimento 2 ou 3);
-     Matriz:
-      \<ins\>Criação:\</ins\>
-      **matrix**(m; n) - cria uma matriz vazia com dimensões m⨯n;
-      **identity**(n) - cria uma matriz identidade com dimensões n⨯n;
-      **diagonal**(n; d) - cria uma matriz diagonal n⨯n e preenche a diagonal com o valor d;
-      **column**(m; c) - cria uma matriz coluna com dimensões m⨯1, preenchida com o valor c;
-      **utriang**(n) - cria uma matriz triangular superior com dimensões n⨯n;
-      **ltriang**(n) - cria uma matriz triangular inferior com dimensões n⨯n;
-      **symmetric**(n) - cria uma matriz simétrica com dimensões n⨯n;
-      **matrix\_hp**(m; n) - cria uma matriz de alto desempenho com dimensões m⨯n;
-      **identity\_hp**(n) - cria uma matriz identidade de alto desempenho com dimensões n⨯n;
-      **diagonal\_hp**(n; d) - cria uma matriz diagonal hp n⨯n preenchida com valor d;
-      **column\_hp**(m; c) - cria uma matriz coluna hp m⨯1 preenchida com valor c;
-      **utriang\_hp**(n) - cria uma matriz triangular superior hp n⨯n;
-      **ltriang\_hp**(n) - cria uma matriz triangular inferior hp n⨯n;
-      **symmetric\_hp**(n) - cria uma matriz simétrica hp com dimensões n⨯n;
-      **vec2diag**(v) - cria uma matriz diagonal a partir dos elementos do vetor v;
-      **vec2row**(v) - cria uma matriz linha a partir dos elementos do vetor v;
-      **vec2col**(v) - cria uma matriz coluna a partir dos elementos do vetor v;
-      **join\_cols**(c₁; c₂; c₃…) - cria uma nova matriz unindo vetores coluna;
-      **join\_rows**(r₁; r₂; r₃…) - cria uma nova matriz unindo vetores linha;
-      **augment**(A; B; C…) - cria uma nova matriz anexando matrizes A; B; C lado a lado;
-      **stack**(A; B; C…) - cria uma nova matriz empilhando matrizes A; B; C uma abaixo da outra;
-      \<ins\>Estrutural:\</ins\>
-      **n\_rows**(M) - número de linhas na matriz M;
-      **n\_cols**(M) - número de colunas na matriz M;
-      **mresize**(M; m; n) - define novas dimensões m e n para a matriz M;
-      **mfill**(M; x) - preenche a matriz M com o valor x;
-      **fill\_row**(M; i; x) - preenche a i-ésima linha da matriz M com o valor x;
-      **fill\_col**(M; j; x) - preenche a j-ésima coluna da matriz M com o valor x;
-      **copy**(A; B; i; j) - copia todos os elementos de A para B, começando nos índices i e j de B;
-      **add**(A; B; i; j) - soma todos os elementos de A aos de B, começando nos índices i e j de B;
-      **row**(M; i) - extrai a i-ésima linha da matriz M como um vetor;
-      **col**(M; j) - extrai a j-ésima coluna da matriz M como um vetor;
-      **extract\_rows**(M; i) - extrai as linhas da matriz M cujos índices estão contidos no vetor i;
-      **extract\_cols**(M; j) - extrai as colunas da matriz M cujos índices estão contidos no vetor j;
-      **diag2vec**(M) - extrai os elementos da diagonal da matriz M para um vetor;
-      **submatrix**(M; i₁; i₂; j₁; j₂) - extrai uma submatriz de M, delimitada pelas linhas i₁ e i₂ e colunas j₁ e j₂, incl.;
-      \<ins\>Dados:\</ins\>
-      **sort\_cols**(M; i) - ordena as colunas de M com base nos valores da linha i em ordem crescente;
-      **rsort\_cols**(M; i) - ordena as colunas de M com base nos valores da linha i em ordem decrescente;
-      **sort\_rows**(M; j) - ordena as linhas de M com base nos valores da coluna j em ordem crescente;
-      **rsort\_rows**(M; j) - ordena as linhas de M com base nos valores da coluna j em ordem decrescente;
-      **order\_cols**(M; i) - os índices das colunas de M baseados na ordenação dos valores da linha i em ordem crescente;
-      **revorder\_cols**(M; i) - os índices das colunas de M baseados na ordenação dos valores da linha i em ordem decrescente;
-      **order\_rows**(M; j) - os índices das linhas de M baseados na ordenação dos valores na coluna j em ordem crescente;
-      **revorder\_rows**(M; j) - os índices das linhas de M baseados na ordenação dos valores na coluna j em ordem decrescente;
-      **mcount**(M; x) - número de ocorrências do valor x na matriz M;
-      **msearch**(M; x; i; j) - vetor com os dois índices da primeira ocorrência de x na matriz M, partindo dos índices i e j;
-      **mfind**(M; x) ou
-      **mfind\_eq**(M; x) - os índices de todos os elementos em M que são = x;
-      **mfind\_ne**(M; x) - os índices de todos os elementos em M que são ≠ x;
-      **mfind\_lt**(M; x) - os índices de todos os elementos em M que são \< x;
-      **mfind\_le**(M; x) - os índices de todos os elementos em M que são ≤ x;
-      **mfind\_gt**(M; x) - os índices de todos os elementos em M que são \> x;
-      **mfind\_ge**(M; x) - os índices de todos os elementos em M que são ≥ x;
-      **hlookup**(M; x; i₁; i₂) ou
-      **hlookup\_eq**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são = x;
-      **hlookup\_ne**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≠ x;
-      **hlookup\_lt**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são \< x;
-      **hlookup\_le**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≤ x;
-      **hlookup\_gt**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são \> x;
-      **hlookup\_ge**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≥ x;
-      **vlookup**(M; x; j₁; j₂) ou
-      **vlookup\_eq**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são = x;
-      **vlookup\_ne**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≠ x;
-      **vlookup\_lt**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são \< x;
-      **vlookup\_le**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≤ x;
-      **vlookup\_gt**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são \> x;
-      **vlookup\_ge**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≥ x;
-      \<ins\>Matemática:\</ins\>
-      **hprod**(A; B) - produto de Hadamard das matrizes A e B;
-      **fprod**(A; B) - produto de Frobenius das matrizes A e B;
-      **kprod**(A; B) - produto de Kronecker das matrizes A e B;
-      **mnorm\_1**(M) - norma L1 da matriz M;
-      **mnorm**(M) ou
-      **mnorm\_2**(M) - norma L2 da matriz M;
-      **mnorm\_e**(M) - norma de Frobenius da matriz M;
-      **mnorm\_i**(M) - norma L∞ da matriz M;
-      **cond\_1**(M) - número de condição de M baseado na norma L1;
-      **cond**(M) ou
-      **cond\_2**(M) - número de condição de M baseado na norma L2;
-      **cond\_e**(M) - número de condição de M baseado na norma de Frobenius;
-      **cond\_i**(M) - número de condição de M baseado na norma L∞;
-      **det**(M) - determinante da matriz M;
-      **rank**(M) - posto da matriz M;
-      **trace**(M) - traço da matriz M;
-      **transp**(M) - transposta da matriz M;
-      **adj**(M) - adjunta da matriz M;
-      **cofactor**(M) - matriz de cofatores de M;
-      **eigenvals**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovalores da matriz M como um vetor;
-      **eigenvecs**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovetores da matriz M como uma matriz row-major;
-      **eigen**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovalores e autovetores de M como uma matriz row-major;
-      **cholesky**(M) - decomposição de Cholesky de uma matriz M simétrica e definida positiva;
-      **lu**(M) - decomposição LU da matriz M;
-      **qr**(M) - decomposição QR da matriz M;
-      **svd**(M) - decomposição em valores singulares (SVD) de M;
-      **inverse**(M) - inversa da matriz M;
-      **lsolve**(A; b) - resolve o sistema de equações lineares Ax = b usando decomposição LDLT para matrizes simétricas e LU para não simétricas;
-      **clsolve**(A; b) - resolve a equação matricial linear Ax = b com matriz A simétrica e definida positiva usando decomposição de Cholesky;
-      **slsolve**(A; b) - resolve a equação matricial linear Ax = b com matriz A hp simétrica e definida positiva usando o método do gradiente conjugado precondicionado (PCG);
-      **msolve**(A; B) - resolve a equação matricial generalizada AX = B usando decomposição LDLT para matrizes simétricas e LU para não simétricas;
-      **cmsolve**(A; B) - resolve a equação matricial generalizada AX = B com matriz A simétrica e definida positiva usando decomposição de Cholesky;
-      **smsolve**(A; B) - resolve a equação matricial generalizada AX = B com matriz A hp simétrica e definida positiva usando o método PCG;
-      **matmul**(A; B) - multiplicação rápida de matrizes hp quadradas usando o algoritmo paralelo de Winograd. O operador de multiplicação A\*B o utiliza automaticamente para todas as matrizes hp quadradas de tamanho 10 ou superior;
-      **fft**(M) - realiza a transformada rápida de Fourier da matriz row-major M. Deve ter uma linha para dados reais e duas linhas para complexos;
-      **ift**(M) - realiza a transformada inversa de Fourier da matriz row-major M. Deve ter uma linha para dados reais e duas linhas para complexos;
-      **\<ins\>Interpolação dupla:\</ins\>**
-      **take**(x; y; M) - retorna o elemento da matriz M nos índices x e y;
-      **line**(x; y; M) - interpolação linear dupla dos elementos da matriz M baseada nos valores de x e y;
-      **spline**(x; y; M) - interpolação dupla por spline de Hermite dos elementos da matriz M baseada nos valores de x e y.
-      *Tol* - tolerância alvo para o resolvedor iterativo PCG.
+      **atan2**(x; y) - o ângulo cuja tangente é o quociente entre y e x;  
+      **acsc**(x) - arco cossecante;  
+      **asec**(x) - arco secante;  
+      **acot**(x) - arco cotangente;  
+     Hiperbólicas Inversas:  
+      **asinh**(x) - arco seno hiperbólico;  
+      **acosh**(x) - arco cosseno hiperbólico;  
+      **atanh**(x) - arco tangente hiperbólico;  
+      **acsch**(x) - arco cossecante hiperbólico;  
+      **asech**(x) - arco secante hiperbólico;  
+      **acoth**(x) - arco cotangente hiperbólico;  
+     Logarítmicas, exponenciais e raízes:  
+      **log**(x)   - logaritmo decimal;  
+      **ln**(x)    - logaritmo natural;  
+      **log\_2**(x) - logaritmo binário;  
+      **exp**(x)   - exponencial natural;  
+      **sqr**(x) ou **sqrt**(x) - raiz quadrada;  
+      **cbrt**(x) - raiz cúbica;  
+      **root**(x; n) - raiz enésima;  
+     Arredondamento:  
+      **round**(x) - arredonda para o inteiro mais próximo;  
+      **floor**(x) - arredonda para o inteiro menor (em direção a -∞);  
+      **ceiling**(x) - arredonda para o inteiro maior (em direção a +∞);  
+      **trunc**(x) - arredonda para o inteiro menor (em direção a zero);  
+     Inteiros:  
+      **mod**(x; y) - o resto de uma divisão inteira;  
+      **gcd**(x; y; z...) - o máximo divisor comum de vários inteiros;  
+      **lcm**(x; y; z...) - o mínimo múltiplo comum de vários inteiros;  
+     Complexos:  
+      **re**(z)    - a parte real de um número complexo;  
+      **im**(z)    - a parte imaginária de um número complexo;  
+      **abs**(z)   - valor absoluto/módulo;  
+      **phase**(z) - a fase de um número complexo;  
+      **conj**(z)  - o conjugado de um número complexo;  
+     Agregação e interpolação:  
+      **min**(x; y; z...) - mínimo de múltiplos valores;  
+      **max**(x; y; z...) - máximo de múltiplos valores;  
+      **sum**(x; y; z...) - soma de múltiplos valores = x + y + z...;  
+      **sumsq**(x; y; z...) - soma dos quadrados = x² + y² + z²...;  
+      **srss**(x; y; z...) - raiz quadrada da soma dos quadrados = sqrt(x² + y² + z²...);  
+      **average**(x; y; z...) - média de múltiplos valores = (x + y + z...)/n;  
+      **product**(x; y; z...) - produto de múltiplos valores = x·y·z...;  
+      **mean**(x; y; z...) - média geométrica = raiz enésima(x·y·z...);  
+      **take**(n; a; b; c...) - retorna o n-ésimo elemento da lista;  
+      **line**(x; a; b; c...) - interpolação linear;  
+      **spline**(x; a; b; c...) - interpolação por spline de Hermite;  
+     Condicional e lógico:  
+      **if**(*cond*; *valor-se-verdade*; *valor-se-falso*) - avaliação condicional;  
+      **switch**(*cond1*; *valor1*; *cond2*; *valor2*; … ; *padrão*) - avaliação seletiva;  
+      **not**(x) - "NÃO" lógico;  
+      **and**(x; y; z...) - "E" lógico;  
+      **or**(x; y; z...) - "OU" lógico;  
+      **xor**(x; y; z...) - "XOR" lógico;  
+     Outros:  
+      **sign**(x) - o sinal de um número;  
+      **random**(x) - número aleatório entre 0 e x;  
+      **getunits**(x) - obtém as unidades de x sem o valor. Retorna 1 se x for adimensional;  
+      **setunits**(x; u) - define as unidades u para x, onde x pode ser escalar, vetor ou matriz;  
+      **clrunits**(x) - remove as unidades de um escalar, vetor ou matriz x;  
+      **hp**(x) - converte x para seu tipo equivalente de alto desempenho (hp);  
+      **ishp**(x) - verifica se o tipo de x é um vetor ou matriz de alto desempenho (hp);  
+     Vetor:  
+      \<ins\>Criação:\</ins\>  
+      **vector**(n) - cria um vetor vazio com comprimento n;  
+      **vector\_hp**(n) - cria um vetor vazio de alto desempenho (hp) com comprimento n;  
+      **range**(x1; xn; s) - cria um vetor com valores de x1 a xn com passo s;  
+      **range\_hp**(x1; xn; s) - cria um vetor hp a partir de um intervalo de valores como acima;  
+      \<ins\>Estrutural:\</ins\>  
+      **len**(v) - retorna o comprimento do vetor v;  
+      **size**(v) - o tamanho real do vetor v - o índice do último elemento não nulo;  
+      **resize**(v; n) - define um novo comprimento n para o vetor v;  
+      **fill**(v; x) - preenche o vetor v com o valor x;  
+      **join**(A; b; c…) - cria um vetor unindo os argumentos: matrizes, vetores e escalares;  
+      **slice**(v; i₁; i₂) - retorna a parte do vetor v delimitada pelos índices i₁ e i₂ inclusive;  
+      **first**(v; n) - os primeiros n elementos do vetor v;  
+      **last**(v; n) - os últimos n elementos do vetor v;  
+      **extract**(v; i) - extrai os elementos de v cujos índices estão contidos em i;  
+      \<ins\>Dados:\</ins\>  
+      **sort**(v) - ordena os elementos do vetor v em ordem crescente;  
+      **rsort**(v) - ordena os elementos do vetor v em ordem decrescente;  
+      **order**(v) - os índices do vetor v, organizados pela ordem crescente de seus elementos;  
+      **revorder**(v) - os índices do vetor v, organizados pela ordem decrescente de seus elementos;  
+      **reverse**(v) - um novo vetor contendo os elementos de v em ordem inversa;  
+      **count**(v; x; i) - o número de elementos em v, após o i-ésimo, que são iguais a x;  
+      **search**(v; x; i)- o índice do primeiro elemento em v, após o i-ésimo, que é igual a x;  
+      **find**(v; x; i) ou  
+      **find\_eq**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são = x;  
+      **find\_ne**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≠ x;  
+      **find\_lt**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são \< x;  
+      **find\_le**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≤ x;  
+      **find\_gt**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são \> x;  
+      **find\_ge**(v; x; i) - os índices de todos os elementos em v, após o i-ésimo, que são ≥ x;  
+      **lookup**(a; b; x) ou  
+      **lookup\_eq**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são = x;  
+      **lookup\_ne**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≠ x;  
+      **lookup\_lt**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são \< x;  
+      **lookup\_le**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≤ x;  
+      **lookup\_gt**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são \> x;  
+      **lookup\_ge**(a; b; x) - todos os elementos em a para os quais os respectivos elementos em b são ≥ x;  
+      \<ins\>Matemática:\</ins\>  
+      **norm\_1**(v) - norma L1 (Manhattan) do vetor v;  
+      **norm**(v) ou  
+      **norm\_2**(v) ou  
+      **norm\_e**(v) - norma L2 (Euclidiana) do vetor v;  
+      **norm\_p**(v; p) - norma Lp do vetor v;  
+      **norm\_i**(v) - norma L∞ (infinito) do vetor v;  
+      **unit**(v) - o vetor v normalizado (com norma L2 = 1);  
+      **dot**(a; b) - produto escalar de dois vetores a e b;  
+      **cross**(a; b) - produto vetorial de dois vetores a e b (com comprimento 2 ou 3);  
+     Matriz:  
+      \<ins\>Criação:\</ins\>  
+      **matrix**(m; n) - cria uma matriz vazia com dimensões m⨯n;  
+      **identity**(n) - cria uma matriz identidade com dimensões n⨯n;  
+      **diagonal**(n; d) - cria uma matriz diagonal n⨯n e preenche a diagonal com o valor d;  
+      **column**(m; c) - cria uma matriz coluna com dimensões m⨯1, preenchida com o valor c;  
+      **utriang**(n) - cria uma matriz triangular superior com dimensões n⨯n;  
+      **ltriang**(n) - cria uma matriz triangular inferior com dimensões n⨯n;  
+      **symmetric**(n) - cria uma matriz simétrica com dimensões n⨯n;  
+      **matrix\_hp**(m; n) - cria uma matriz de alto desempenho com dimensões m⨯n;  
+      **identity\_hp**(n) - cria uma matriz identidade de alto desempenho com dimensões n⨯n;  
+      **diagonal\_hp**(n; d) - cria uma matriz diagonal hp n⨯n preenchida com valor d;  
+      **column\_hp**(m; c) - cria uma matriz coluna hp m⨯1 preenchida com valor c;  
+      **utriang\_hp**(n) - cria uma matriz triangular superior hp n⨯n;  
+      **ltriang\_hp**(n) - cria uma matriz triangular inferior hp n⨯n;  
+      **symmetric\_hp**(n) - cria uma matriz simétrica hp com dimensões n⨯n;  
+      **vec2diag**(v) - cria uma matriz diagonal a partir dos elementos do vetor v;  
+      **vec2row**(v) - cria uma matriz linha a partir dos elementos do vetor v;  
+      **vec2col**(v) - cria uma matriz coluna a partir dos elementos do vetor v;  
+      **join\_cols**(c₁; c₂; c₃…) - cria uma nova matriz unindo vetores coluna;  
+      **join\_rows**(r₁; r₂; r₃…) - cria uma nova matriz unindo vetores linha;  
+      **augment**(A; B; C…) - cria uma nova matriz anexando matrizes A; B; C lado a lado;  
+      **stack**(A; B; C…) - cria uma nova matriz empilhando matrizes A; B; C uma abaixo da outra;  
+      \<ins\>Estrutural:\</ins\>  
+      **n\_rows**(M) - número de linhas na matriz M;  
+      **n\_cols**(M) - número de colunas na matriz M;  
+      **mresize**(M; m; n) - define novas dimensões m e n para a matriz M;  
+      **mfill**(M; x) - preenche a matriz M com o valor x;  
+      **fill\_row**(M; i; x) - preenche a i-ésima linha da matriz M com o valor x;  
+      **fill\_col**(M; j; x) - preenche a j-ésima coluna da matriz M com o valor x;  
+      **copy**(A; B; i; j) - copia todos os elementos de A para B, começando nos índices i e j de B;  
+      **add**(A; B; i; j) - soma todos os elementos de A aos de B, começando nos índices i e j de B;  
+      **row**(M; i) - extrai a i-ésima linha da matriz M como um vetor;  
+      **col**(M; j) - extrai a j-ésima coluna da matriz M como um vetor;  
+      **extract\_rows**(M; i) - extrai as linhas da matriz M cujos índices estão contidos no vetor i;  
+      **extract\_cols**(M; j) - extrai as colunas da matriz M cujos índices estão contidos no vetor j;  
+      **diag2vec**(M) - extrai os elementos da diagonal da matriz M para um vetor;  
+      **submatrix**(M; i₁; i₂; j₁; j₂) - extrai uma submatriz de M, delimitada pelas linhas i₁ e i₂ e colunas j₁ e j₂, incl.;  
+      \<ins\>Dados:\</ins\>  
+      **sort\_cols**(M; i) - ordena as colunas de M com base nos valores da linha i em ordem crescente;  
+      **rsort\_cols**(M; i) - ordena as colunas de M com base nos valores da linha i em ordem decrescente;  
+      **sort\_rows**(M; j) - ordena as linhas de M com base nos valores da coluna j em ordem crescente;  
+      **rsort\_rows**(M; j) - ordena as linhas de M com base nos valores da coluna j em ordem decrescente;  
+      **order\_cols**(M; i) - os índices das colunas de M baseados na ordenação dos valores da linha i em ordem crescente;  
+      **revorder\_cols**(M; i) - os índices das colunas de M baseados na ordenação dos valores da linha i em ordem decrescente;  
+      **order\_rows**(M; j) - os índices das linhas de M baseados na ordenação dos valores na coluna j em ordem crescente;  
+      **revorder\_rows**(M; j) - os índices das linhas de M baseados na ordenação dos valores na coluna j em ordem decrescente;  
+      **mcount**(M; x) - número de ocorrências do valor x na matriz M;  
+      **msearch**(M; x; i; j) - vetor com os dois índices da primeira ocorrência de x na matriz M, partindo dos índices i e j;  
+      **mfind**(M; x) ou  
+      **mfind\_eq**(M; x) - os índices de todos os elementos em M que são = x;  
+      **mfind\_ne**(M; x) - os índices de todos os elementos em M que são ≠ x;  
+      **mfind\_lt**(M; x) - os índices de todos os elementos em M que são \< x;  
+      **mfind\_le**(M; x) - os índices de todos os elementos em M que são ≤ x;  
+      **mfind\_gt**(M; x) - os índices de todos os elementos em M que são \> x;  
+      **mfind\_ge**(M; x) - os índices de todos os elementos em M que são ≥ x;  
+      **hlookup**(M; x; i₁; i₂) ou  
+      **hlookup\_eq**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são = x;  
+      **hlookup\_ne**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≠ x;  
+      **hlookup\_lt**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são \< x;  
+      **hlookup\_le**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≤ x;  
+      **hlookup\_gt**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são \> x;  
+      **hlookup\_ge**(M; x; i₁; i₂) - os valores da linha i₂ de M, para os quais os elementos na linha i₁ são ≥ x;  
+      **vlookup**(M; x; j₁; j₂) ou  
+      **vlookup\_eq**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são = x;  
+      **vlookup\_ne**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≠ x;  
+      **vlookup\_lt**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são \< x;  
+      **vlookup\_le**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≤ x;  
+      **vlookup\_gt**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são \> x;  
+      **vlookup\_ge**(M; x; j₁; j₂) - os valores da coluna j₂ de M, para os quais os elementos na coluna j₁ são ≥ x;  
+      \<ins\>Matemática:\</ins\>  
+      **hprod**(A; B) - produto de Hadamard das matrizes A e B;  
+      **fprod**(A; B) - produto de Frobenius das matrizes A e B;  
+      **kprod**(A; B) - produto de Kronecker das matrizes A e B;  
+      **mnorm\_1**(M) - norma L1 da matriz M;  
+      **mnorm**(M) ou  
+      **mnorm\_2**(M) - norma L2 da matriz M;  
+      **mnorm\_e**(M) - norma de Frobenius da matriz M;  
+      **mnorm\_i**(M) - norma L∞ da matriz M;  
+      **cond\_1**(M) - número de condição de M baseado na norma L1;  
+      **cond**(M) ou  
+      **cond\_2**(M) - número de condição de M baseado na norma L2;  
+      **cond\_e**(M) - número de condição de M baseado na norma de Frobenius;  
+      **cond\_i**(M) - número de condição de M baseado na norma L∞;  
+      **det**(M) - determinante da matriz M;  
+      **rank**(M) - posto da matriz M;  
+      **trace**(M) - traço da matriz M;  
+      **transp**(M) - transposta da matriz M;  
+      **adj**(M) - adjunta da matriz M;  
+      **cofactor**(M) - matriz de cofatores de M;  
+      **eigenvals**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovalores da matriz M como um vetor;  
+      **eigenvecs**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovetores da matriz M como uma matriz row-major;  
+      **eigen**(M; n\_e) - os primeiros n\_e (ou todos se omitido) autovalores e autovetores de M como uma matriz row-major;  
+      **cholesky**(M) - decomposição de Cholesky de uma matriz M simétrica e definida positiva;  
+      **lu**(M) - decomposição LU da matriz M;  
+      **qr**(M) - decomposição QR da matriz M;  
+      **svd**(M) - decomposição em valores singulares (SVD) de M;  
+      **inverse**(M) - inversa da matriz M;  
+      **lsolve**(A; b) - resolve o sistema de equações lineares Ax = b usando decomposição LDLT para matrizes simétricas e LU para não simétricas;  
+      **clsolve**(A; b) - resolve a equação matricial linear Ax = b com matriz A simétrica e definida positiva usando decomposição de Cholesky;  
+      **slsolve**(A; b) - resolve a equação matricial linear Ax = b com matriz A hp simétrica e definida positiva usando o método do gradiente conjugado precondicionado (PCG);  
+      **msolve**(A; B) - resolve a equação matricial generalizada AX = B usando decomposição LDLT para matrizes simétricas e LU para não simétricas;  
+      **cmsolve**(A; B) - resolve a equação matricial generalizada AX = B com matriz A simétrica e definida positiva usando decomposição de Cholesky;  
+      **smsolve**(A; B) - resolve a equação matricial generalizada AX = B com matriz A hp simétrica e definida positiva usando o método PCG;  
+      **matmul**(A; B) - multiplicação rápida de matrizes hp quadradas usando o algoritmo paralelo de Winograd. O operador de multiplicação A\*B o utiliza automaticamente para todas as matrizes hp quadradas de tamanho 10 ou superior;  
+      **fft**(M) - realiza a transformada rápida de Fourier da matriz row-major M. Deve ter uma linha para dados reais e duas linhas para complexos;  
+      **ift**(M) - realiza a transformada inversa de Fourier da matriz row-major M. Deve ter uma linha para dados reais e duas linhas para complexos;  
+      **\<ins\>Interpolação dupla:\</ins\>**  
+      **take**(x; y; M) - retorna o elemento da matriz M nos índices x e y;  
+      **line**(x; y; M) - interpolação linear dupla dos elementos da matriz M baseada nos valores de x e y;  
+      **spline**(x; y; M) - interpolação dupla por spline de Hermite dos elementos da matriz M baseada nos valores de x e y.  
+      *Tol* - tolerância alvo para o resolvedor iterativo PCG.  
   * Comentários: "Título" ou 'texto' em aspas duplas ou simples, respectivamente. HTML, CSS, JS e SVG são permitidos.
-  * Gráficos e plotagem:
-     $Plot { f(x) @ x = a : b } - gráfico simples;
-    &emsp;$Plot { x(t) | y(t) @ t = a : b } - paramétrico;
-     $Plot { f1(x) & f2(x) & ... @ x = a : b } - múltiplos;
-    &emsp;$Plot { x1(t) | y1(t) & x2(t) | y2(t) & ... @ x = a : b } - múltiplos paramétricos;
-     $Map { f(x; y) @ x = a : b & y = c : d }  - mapa de cores 2D de uma superfície 3D;
-     PlotHeight - altura da área do gráfico em pixels;
-     PlotWidth - largura da área do gráfico em pixels;
-     PlotSVG - desenha gráficos em formato vetorial (SVG);
-     PlotAdaptive - usa malha adaptativa (= 1) para plotagem de funções ou uniforme (= 0);
-     PlotStep - o tamanho da malha para plotagem de mapa;
-     PlotPalette - o número da paleta de cores a ser usada para gráficos de superfície (0-9);
-     PlotShadows - desenha gráficos de superfície com sombras;
-     PlotSmooth - transição suave de cores (= 1) ou isobandas (= 0) para gráficos de superfície;
-     PlotLightDir - direção da fonte de luz (0-7) no sentido horário.
-  * Métodos iterativos e numéricos:
-     $Root { f(x) = const @ x = a : b } - busca de raiz para f(x) = const;
-    &emsp;$Root { f(x) @ x = a : b } - busca de raiz para f(x) = 0;
-     $Find { f(x) @ x = a : b } - similar ao anterior, mas não exige que x seja uma solução precisa;
-    &emsp;$Sup { f(x) @ x = a : b } - máximo local de uma função;
-     $Inf { f(x) @ x = a : b } - mínimo local de uma função;
-    &emsp;$Area { f(x) @ x = a : b } - integração numérica adaptativa de Gauss-Lobatto;
-     $Integral { f(x) @ x = a : b } - integração numérica Tanh-Sinh;
-    &emsp;$Slope { f(x) @ x = a } - diferenciação numérica por extrapolação de Richardson;
-     $Derivative { f(x) @ x = a } - diferenciação numérica por método de passo complexo;
-    &emsp;$Sum { f(k) @ k = a : b } - soma iterativa;
-     $Product { f(k) @ k = a : b } - produto iterativo;
-    &emsp;$Repeat { f(k) @ k = a : b } - bloco de expressão iterativo com contador;
-     $While { condição; expressões } - bloco de expressão iterativo com condição;
-    &emsp;$Block { expressões } - bloco de expressão multilinha;
-     $Inline { expressões } - bloco de expressão inline;
-     Precision - precisão relativa para métodos numéricos \[10\<sup\>-2\</sup\>; 10\<sup\>-16\</sup\>\] (padrão é 10\<sup\>-12\</sup\>)
-  * Controle de fluxo de programa:
-     Simples:
-      \#if *condição*
-       *Seu código aqui*
-      \#end if
-     Alternativo:
-      \#if *condição*
-       *Seu código aqui*
-      \#else
-       *Outro código*
-      \#end if
-     Completo:
-      \#if *condição1*
-       *Seu código aqui*
-      \#else if *condição2*
-       *Seu código aqui*
-      \#else
-       *Outro código*
-      \#end if
-    Você pode adicionar ou omitir quantos "\#else if" forem necessários. Apenas um "\#else" é permitido (também opcional).
-  * Blocos de iteração:
-     Simples:
-      \#repeat *número de repetições*
-       *Seu código aqui*
-      \#loop
-     Com interrupção/continuação condicional:
-      \#repeat *número de repetições*
-       *Seu código aqui*
-       \#if *condição*
-        \#break ou \#continue
-       \#end if
-       *Mais código*
-      \#loop
-     Com contador:
-      \#for contador = início : fim
-       *Seu código aqui*
-      \#loop
-     Com condição:
-      \#while *condição*
-       *Seu código aqui*
-      \#loop
-  * Módulos e macros/variáveis de texto:
-     Módulos:
-      \#include *nome\_do\_arquivo* - inclui arquivo externo (módulo);
-      \#local - inicia seção local (não será incluída);
-      \#global - inicia seção global (será incluída);
-     Variável de texto inline:
-      \#def *nome\_da\_variavel$* = *conteúdo*
-    &emsp;Variável de texto multilinha:
-    &emsp;&emsp;#def *nome_da_variavel$*
-       *conteúdo linha 1*
-       *conteúdo linha 2*
-       ...
+  * Gráficos e plotagem:  
+     $Plot { f(x) @ x = a : b } - gráfico simples;  
+    &emsp;$Plot { x(t) | y(t) @ t = a : b } - paramétrico;  
+     $Plot { f1(x) & f2(x) & ... @ x = a : b } - múltiplos;  
+    &emsp;$Plot { x1(t) | y1(t) & x2(t) | y2(t) & ... @ x = a : b } - múltiplos paramétricos;  
+     $Map { f(x; y) @ x = a : b & y = c : d }  - mapa de cores 2D de uma superfície 3D;  
+     PlotHeight - altura da área do gráfico em pixels;  
+     PlotWidth - largura da área do gráfico em pixels;  
+     PlotSVG - desenha gráficos em formato vetorial (SVG);  
+     PlotAdaptive - usa malha adaptativa (= 1) para plotagem de funções ou uniforme (= 0);  
+     PlotStep - o tamanho da malha para plotagem de mapa;  
+     PlotPalette - o número da paleta de cores a ser usada para gráficos de superfície (0-9);  
+     PlotShadows - desenha gráficos de superfície com sombras;  
+     PlotSmooth - transição suave de cores (= 1) ou isobandas (= 0) para gráficos de superfície;  
+     PlotLightDir - direção da fonte de luz (0-7) no sentido horário.  
+  * Métodos iterativos e numéricos:  
+     $Root { f(x) = const @ x = a : b } - busca de raiz para f(x) = const;  
+    &emsp;$Root { f(x) @ x = a : b } - busca de raiz para f(x) = 0;  
+     $Find { f(x) @ x = a : b } - similar ao anterior, mas não exige que x seja uma solução precisa;  
+    &emsp;$Sup { f(x) @ x = a : b } - máximo local de uma função;  
+     $Inf { f(x) @ x = a : b } - mínimo local de uma função;  
+    &emsp;$Area { f(x) @ x = a : b } - integração numérica adaptativa de Gauss-Lobatto;  
+     $Integral { f(x) @ x = a : b } - integração numérica Tanh-Sinh;  
+    &emsp;$Slope { f(x) @ x = a } - diferenciação numérica por extrapolação de Richardson;  
+     $Derivative { f(x) @ x = a } - diferenciação numérica por método de passo complexo;  
+    &emsp;$Sum { f(k) @ k = a : b } - soma iterativa;  
+     $Product { f(k) @ k = a : b } - produto iterativo;  
+    &emsp;$Repeat { f(k) @ k = a : b } - bloco de expressão iterativo com contador;  
+     $While { condição; expressões } - bloco de expressão iterativo com condição;  
+    &emsp;$Block { expressões } - bloco de expressão multilinha;  
+     $Inline { expressões } - bloco de expressão inline;  
+     Precision - precisão relativa para métodos numéricos \[10\<sup\>-2\</sup\>; 10\<sup\>-16\</sup\>\] (padrão é 10\<sup\>-12\</sup\>)  
+  * Controle de fluxo de programa:  
+     Simples:  
+      \#if *condição*  
+       *Seu código aqui*  
+      \#end if  
+     Alternativo:  
+      \#if *condição*  
+       *Seu código aqui*  
+      \#else  
+       *Outro código*  
+      \#end if  
+     Completo:  
+      \#if *condição1*  
+       *Seu código aqui*  
+      \#else if *condição2*  
+       *Seu código aqui*  
+      \#else  
+       *Outro código*  
+      \#end if  
+    Você pode adicionar ou omitir quantos "\#else if" forem necessários. Apenas um "\#else" é permitido (também opcional).  
+  * Blocos de iteração:  
+     Simples:  
+      \#repeat *número de repetições*  
+       *Seu código aqui*  
+      \#loop  
+     Com interrupção/continuação condicional:  
+      \#repeat *número de repetições*  
+       *Seu código aqui*  
+       \#if *condição*  
+        \#break ou \#continue  
+       \#end if  
+       *Mais código*  
+      \#loop  
+     Com contador:  
+      \#for contador = início : fim  
+       *Seu código aqui*  
+      \#loop  
+     Com condição:  
+      \#while *condição*  
+       *Seu código aqui*  
+      \#loop  
+  * Módulos e macros/variáveis de texto:  
+     Módulos:  
+      \#include *nome\_do\_arquivo* - inclui arquivo externo (módulo);  
+      \#local - inicia seção local (não será incluída);  
+      \#global - inicia seção global (será incluída);  
+     Variável de texto inline:  
+      \#def *nome\_da\_variavel$* = *conteúdo*  
+    &emsp;Variável de texto multilinha:  
+    &emsp;&emsp;#def *nome_da_variavel$*  
+       *conteúdo linha 1*  
+       *conteúdo linha 2*  
+       ...  
       \#end def  
      Macro de texto inline:  
       \#def *nome\_da\_macro$*(*param1$*; *param2$*;...) = *conteúdo*  
